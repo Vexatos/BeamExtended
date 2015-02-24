@@ -46,7 +46,7 @@ If you notice the extension isn't behaving as should, refresh the page and react
 ## Current features
 * Twitch Emotes
 * Links to images
-* Beter Mentions
+* Better Mentions
 * Donation Perks
 
 ## Current fixes
