@@ -19,7 +19,7 @@ Right Click your bar and choose `"Add Page"` or ``"Create Bookmark"``
 
 ![Alt text](http://puu.sh/fIMML/98ee27d9e9.jpg)
 
-Add ExuPro as the name and this copied exactly as the URL
+Add BeamExtended or BEX as the name and this copied exactly as the URL
 
 ``javascript:(function(){$.getScript('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/contentscript.js');}());``
 
