@@ -1,5 +1,8 @@
 This repo is schedualed for massive changes :D
 
+# Skip this boring process and just get BeX on Google Chrome http://goo.gl/Ewd2XN
+
+
 # BeamExtended
 Extended the unextended potential of Beam!
 
