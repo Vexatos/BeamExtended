@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "BeamExtended",
+    "description": "Extend the unextended potential of Beam!",
+    "icons": {
+        "256": "icon.png"
+    },
+    "version": "1.0.1",
+
+    "content_scripts": [{
+        "matches": ["*://beam.pro/*"],
+        "js": ["jquery-1.11.2.min.js", "script.js"]
+    }],
+    "page_action": {
+        "default_title": "BeamExtended Options",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "storage",
+        "cookies",
+        "*://beam.pro/*"
+    ],
+    "web_accessible_resources": ["bex.js"]
+}

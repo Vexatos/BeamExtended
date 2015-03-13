@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="popup.js"></script>
+    <style>
+    body {
+        background-color: rgb(8, 8, 19);
+        width: 320px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 0;
+        margin: 0;
+        -webkit-user-select: none;
+    }
+    .ch {
+        display: none;
+    }
+    .ch + label>span {
+        background: #FF0000;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        display: inline-block;
+        transition: background 0.2s;
+        border-radius: 2px;
+    }
+    .ch:checked + label>span {
+        background: #00FF17;
+    }
+    .ch + label {
+        display: block;
+        background: rgba(50, 146, 246, 0);
+        padding: 8px;
+        margin: 4px;
+        transition: background 0.3s;
+        border-radius: 4px;
+    }
+    .ch:checked + label {
+        background: rgba(50, 146, 246, 0.2);
+    }
+    .option {
+        color: white;
+    }
+    .intro {
+        color: rgb(0, 236, 255);
+        font-weight: bold;
+        text-align: center;
+    }
+    .change {
+        color: rgb(124, 124, 124);
+        font-style: italic;
+    }
+    .sub-text {
+        color: rgb(124, 124, 124);
+    }
+    .push {
+        padding-left: 10px;
+    }
+    /* unvisited link */
+    
+    a:link {
+        color: #00FFFF;
+        text-decoration: none;
+    }
+    /* visited link */
+    
+    a:visited {
+        color: #00FFFF;
+        text-decoration: none;
+    }
+    /* mouse over link */
+    
+    a:hover {
+        color: #00B5B5;
+        text-decoration: none;
+    }
+    /* selected link */
+    
+    a:active {
+        color: #00B5B5;
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <p class='intro'><a href="https://chrome.google.com/webstore/detail/beamextended/ofabaadlnpnolacjiamdhfkamacpnabi?authuser=2" target='_blank'> Beam Extended v1.0.1 </a>
+    </p>
+    <input type="checkbox" id="twitchemotes" class="ch">
+    <label class='option' for="twitchemotes"><span></span>Twitch Emotes</label>
+    <input type="checkbox" id="usercolors" class="ch">
+    <label class='option' for="usercolors"><span></span>Username Colors</label>
+    <input type="checkbox" id="globalcolors" class="ch">
+    <label class='option' for="globalcolors"><span></span>Global username colors</label>
+    <input type="checkbox" id="linkimages" class="ch">
+    <label class='option' for="linkimages"><span></span>Chat Images</label>
+    <div class='push'>
+        <p class='intro'></p>
+        <p class='change'>Change-Log</p>
+        <p class='sub-text'>- Global Username Colors will change</p>
+        <p class='sub-text'>every username in chat to a new color</p>
+        <p class='sub-text'>- Minor Beam bug fixes</p>
+        <p class='sub-text'>- Fixed Pop-out emotes</p>
+        <p class='sub-text'>- Added TSSN Badges</p>
+        <p class='sub-text'>- Updated Ambassador & Dev badges</p>
+        <p class='sub-text'>- User Colors are currently</p>
+        <p class='sub-text'>experiencing issues do to rate limits</p>
+    </div>
+</body>
+
+</html>
