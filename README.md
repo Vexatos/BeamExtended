@@ -1,18 +1,18 @@
-This repo is schedualed for massive changes :D
+This repo is scheduled for massive changes :D
 
 # Skip this boring process and just get BeX on Google Chrome http://goo.gl/Ewd2XN
 
 
 # BeamExtended
-Extended the unextended potential of Beam!
+Extend the unextended potential of Beam!
 
-This extension will expand the use of Beam.pro fram adding custom emotes, everything you love from Twitch/Hitbox and more
+This extension will expand the use of Beam.pro from adding custom emotes, to everything you love from Twitch/Hitbox and more
 
 ## Installation and Use
 
-To get the extension, first make sure you bookmark bar is visible!
+To get the extension, first make sure your bookmark bar is visible!
 
-``crt+shift+b`` or ``cmd+shift+b`` in chrome to show your bar
+``ctrl+shift+b`` or ``cmd+shift+b`` in chrome to show your bar
 
 ``Right Click open space in URL bar and choose SHOW BOOKMARK BAR``
 
@@ -22,7 +22,7 @@ Right Click your bar and choose `"Add Page"` or ``"Create Bookmark"``
 
 ![Alt text](http://puu.sh/fIMML/98ee27d9e9.jpg)
 
-Add BeamExtended or BEX as the name and this copied exactly as the URL
+Add BeamExtended or BEX as the name and this copied exactly as the URL:
 
 ``javascript:(function(){$.getScript('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/contentscript.js');}());``
 
@@ -30,13 +30,13 @@ Add BeamExtended or BEX as the name and this copied exactly as the URL
 
 Hit Save!
 
-Now once on Beam just click the bookmark to activate it!
+Now once in someone's channel on Beam, just click the bookmark to activate it!
 
 ![Alt text](http://puu.sh/fIN7V/b0c5df8fb8.jpg)
 
 ![Alt text](http://puu.sh/fINb9/19b6b48f03.jpg)
 
-If you notice the extension isn't behaving as should, refresh the page and reactivate the bookmark. If you close the url (tab), refresh or reload you may have to reactive the bookmark :)
+If you notice the extension isn't behaving as should, refresh the page and reactivate the bookmark. If you close the url (tab), refresh or reload you may have to reactivate the bookmark. :)
 
 ## Planned features
 * Custom Channel Emotes
@@ -53,7 +53,7 @@ If you notice the extension isn't behaving as should, refresh the page and react
 * Donation Perks
 
 ## Current fixes
-# More noticable mentions!
+# More noticeable mentions!
 
 ## Before
 
@@ -74,7 +74,7 @@ If you notice the extension isn't behaving as should, refresh the page and react
 
 ![Alt text](http://puu.sh/g7ycN/74d80ffd2c.jpg)
 
-# Links to images, turn into the images
+# Display images directly from links
 
 ### Before
 
@@ -97,4 +97,4 @@ If you notice the extension isn't behaving as should, refresh the page and react
 
 Create an issue to request a new feature you'd like to see!
 
-The Blue name is for Developers and the Yellow for Ambassadors
+The Blue name is for Developers and the Yellow is for Ambassadors.
