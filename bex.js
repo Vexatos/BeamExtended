@@ -12,7 +12,10 @@ BeamExtended = function() {
     var twitchEmoteTemplate = '';
     var twitchEmotes = [];
 
-    var customEmoteTemplate = '';
+    var customEmoteTemplate = {
+        global: '',
+        channel: ''
+    };
     var customEmotes = [];
     var customChannelEmotes = [];
 
@@ -165,11 +168,12 @@ BeamExtended = function() {
             getColors();
         }, 6e4);
     }
+
     getColors();
     //endregion
 
     //region Emotes
-    $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/emotes.json',
+    $.getJSON('https://exudev.ca/BeX/emotes/_index.json',
         /**
          * @param {{template: String, emotes: Object}} data
          */
@@ -229,13 +233,13 @@ BeamExtended = function() {
                 for (var i in emotes) {
                     if (!emotes.hasOwnProperty(i)) continue;
                     var emote = emotes[i];
-                    $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                    $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 }
 
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
@@ -244,17 +248,17 @@ BeamExtended = function() {
         } else {
             $messages.append(
                 $('<div>')
-                .addClass('message')
-                .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                    .addClass('message-body')
-                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br>To set your custom colored username, please tweet <a href="http://ctt.ec/85332" target="_blank">@Exuviax</a><br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                        .addClass('message-body')
+                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br>To set your custom colored username, please tweet <a href="http://ctt.ec/85332" target="_blank">@Exuviax</a><br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
     }
 
-    $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/ChannelEmotes/' + channel + '.json')
+    $.getJSON('https://exudev.ca/BeX/emotes/' + channel + '/_index.json')
         .done(function(emotes) {
             onCustomChannelEmotesLoaded(emotes);
         })
@@ -317,7 +321,7 @@ BeamExtended = function() {
             if (!customEmotes.hasOwnProperty(i)) continue;
             emote = customEmotes[i];
             if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.global.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                 messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
             }
@@ -328,7 +332,7 @@ BeamExtended = function() {
             if (!customChannelEmotes.hasOwnProperty(i)) continue;
             emote = customChannelEmotes[i];
             if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                 messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
             }
