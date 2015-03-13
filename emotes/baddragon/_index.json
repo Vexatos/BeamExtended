@@ -1,0 +1,18 @@
+[{
+	"emote": "wolfie",
+	"image_id": 1
+}, {
+    "emote": "wolfHype",
+    "image_id": 2
+}, {
+	"emote": "wolfDance",
+	"image_id": 3,
+	"image_ext": "gif"
+}, {
+    "emote": ":|",
+    "image_id": 4
+}, {
+	"emote": "wolfLewd",
+	"image_id": 5,
+	"image_ext": "gif"
+}]

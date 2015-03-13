@@ -1,0 +1,9 @@
+[{
+	"emote": "BigX",
+	"image_id": 1
+}, {
+	"emote": "CatDance",
+	"image_id": 1,
+	"image_ext": "gif",
+    "image_pack": "exuviax"
+}]

@@ -1,0 +1,25 @@
+[{
+    "emote": "f",
+    "image_id": 2
+}, {
+    "emote": "t",
+    "image_id": 1
+}, {
+    "emote": "F",
+    "image_id": 2
+}, {
+    "emote": "T",
+    "image_id": 1
+}, {
+    "emote": "false",
+    "image_id": 2
+}, {
+    "emote": "true",
+    "image_id": 1
+}, {
+    "emote": "FALSE",
+    "image_id": 2
+}, {
+    "emote": "TRUE",
+    "image_id": 1
+}]
