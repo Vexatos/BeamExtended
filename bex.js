@@ -12,7 +12,10 @@ BeamExtended = function() {
     var twitchEmoteTemplate = '';
     var twitchEmotes = [];
 
-    var customEmoteTemplate = '';
+    var customEmoteTemplate = {
+        global: '',
+        channel: ''
+    };
     var customEmotes = [];
     var customChannelEmotes = [];
 
