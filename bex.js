@@ -51,6 +51,7 @@ BeamExtended = function() {
     if (channel == 'ifstudios') {
         styleChannel = 'IFstyle';
     } else if ((channel == 'mindlesspuppetz') || (channel == 'siggy') || (channel == 'blackhawk120') || (channel == 'ziteseve') || (channel == 'squeaker') || (channel == 'akujitube') || (channel == 'artdude543') || (channel == 'lilmac21') || (channel == 'icanhascookie69') || (channel == 'cadillac_don')) {
+    // Probably a better way to do this...
         styleChannel = 'tssnStyle';
     } else {
         styleChannel = 'style'
@@ -147,12 +148,13 @@ BeamExtended = function() {
     });
     //endregion
 
-    // Load
-    document.cookie.split(';').forEach(function(part) {
-        if (part.trim().indexOf('BeXColors') === 0) {
-            secondColors = JSON.parse(part.split('=')[1].trim());
-        }
-    })
+    // This is a cookie loader for the GlobalUsernames - Which makes every user on beam have a color
+    // It is currenlty not working
+    // document.cookie.split(';').forEach(function(part) {
+    //    if (part.trim().indexOf('BeXColors') === 0) {
+    //        secondColors = JSON.parse(part.split('=')[1].trim());
+    //    }
+    // })
 
     //region Chat Colors
     function getColors() {
@@ -357,7 +359,7 @@ BeamExtended = function() {
         }
         $this.attr('data-role', messageRole);
 
-        // Check for color
+        // User Colors
         if (bexoptions.usercolors == true) {
             if (colors[messageAuthor] != null) {
                 $this.find('.message-author').css('color', colors[messageAuthor]);
@@ -370,7 +372,8 @@ BeamExtended = function() {
                     var randomPicker = Math.floor(Math.random() * 16);
                     secondColors[messageAuthor] = colorWheel[randomPicker];
                     $this.find('.message-author').css('color', secondColors[messageAuthor]);
-                    document.cookie['BeXColors'] = JSON.stringify(secondColors);
+                    // Here is more of the cookie loader, which is still not working.
+                    // document.cookie['BeXColors'] = JSON.stringify(secondColors);
                 }
             }
         }
