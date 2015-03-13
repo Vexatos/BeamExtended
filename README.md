@@ -39,62 +39,45 @@ Now once in someone's channel on Beam, just click the bookmark to activate it!
 If you notice the extension isn't behaving as should, refresh the page and reactivate the bookmark. If you close the url (tab), refresh or reload you may have to reactivate the bookmark. :)
 
 ## Planned features
-* Custom Channel Emotes
 * Custom background images
-* Expanded themes, including chat colors and nick naming users
-* Badges in chat (on/off)
+* [PLANNED FOR NEXT UPDATE] Badges in chat (on/off)
 * More commands (Such as /me /timeout and more)
 * Integration with ExuBot (Our custom Chat bot)
 
 ## Current features
+* Username Colors
+* Custom Channel Emotes
 * Twitch Emotes
 * Links to images
 * Better Mentions
 * Donation Perks
 
 ## Current fixes
-# More noticeable mentions!
-
-## Before
-
-![Alt text](http://puu.sh/g7ysb/2799a098c9.jpg)
-
-## After 
-
-![Alt text](http://puu.sh/g7yo3/d7d6104ecc.jpg)
+* More noticeable mentions!
 
 
-# Twitch Emotes
 
-### Before
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without limitation of the rights to use, copy, modify, merge,
+and/or publish copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice, any copyright notices herein, and this permission
+notice shall be included in all copies or substantial portions of the Software,
+the Software, or portions of the Software, may not be sold for profit, and the
+Software may not be distributed nor sub-licensed without explicit permission
+from the copyright owner.
 
-![Alt text](http://puu.sh/g7y7r/989342e4fb.jpg)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
-### After
-
-![Alt text](http://puu.sh/g7ycN/74d80ffd2c.jpg)
-
-# Display images directly from links
-
-### Before
-
-![Alt text](http://puu.sh/fIKRN/de0e136849.png)
-
-### After
-
-![Alt text](http://puu.sh/fIKPP/e749a78ea5.jpg)
-
-# Donation perks! Donators get a custom glow in chat (Like @Xero)
-
-### Before
-
-![Alt text](http://puu.sh/g7yyt/30368db71c.jpg)
-
-### After
-
-![Alt text](http://puu.sh/g7yDj/f2507b1a6c.jpg)
+Should any questions arise concerning your usage of this Software, or to
+request permission to distribute this Software, please create an issue on this
+github!
 
 
-Create an issue to request a new feature you'd like to see!
-
-The Blue name is for Developers and the Yellow is for Ambassadors.
