@@ -7,7 +7,7 @@ if (typeof BeamExtendedInstance != 'undefined') {
 }
 
 BeamExtended = function() {
-    var VERSION = '1.0.1';
+    var VERSION = '1.0.2';
 
     var twitchEmoteTemplate = '';
     var twitchEmotes = [];
@@ -22,22 +22,21 @@ BeamExtended = function() {
     var roles = {};
     var colors = {};
     var colorWheel = [
-        "#FFFF00",
-        "#FF00FF",
-        "#808000",
-        "#00FFFF",
-        "#008080",
-        "#C0C0C0",
-        "#00FF00",
-        "#A90000",
+        "#FF0000",
         "#0000FF",
-        "#808080",
         "#008000",
-        "#BD00BD",
-        "#ff7373",
-        "#b6fcd5",
-        "#ffa500",
-        "#cbbeb5"
+        "#B22222",
+        "#FF7F50",
+        "#9ACD32",
+        "#FF4500",
+        "#2E8B57",
+        "#DAA520",
+        "#D2691E",
+        "#5F9EA0",
+        "#1E90FF",
+        "#FF69B4",
+        "#8A2BE2",
+        "#00FF7F"
     ];
     var secondColors = {};
 
@@ -54,13 +53,28 @@ BeamExtended = function() {
     if (channel == 'ifstudios') {
         styleChannel = 'IFstyle';
     } else if ((channel == 'mindlesspuppetz') || (channel == 'siggy') || (channel == 'blackhawk120') || (channel == 'ziteseve') || (channel == 'squeaker') || (channel == 'akujitube') || (channel == 'artdude543') || (channel == 'lilmac21') || (channel == 'icanhascookie69') || (channel == 'cadillac_don')) {
-    // Probably a better way to do this...
+        // Probably a better way to do this...
         styleChannel = 'tssnStyle';
     } else {
         styleChannel = 'style'
     }
 
     var username = '';
+
+    // Create the tooltips only when document ready
+    $(document).ready(function() {
+        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+        $('exu-emote').each(function() {
+            $(this).qtip({
+                content: {
+                    text: function(api) {
+                        return $($(this).attr('href'));
+                    }
+
+                }
+            });
+        });
+    });
 
     var Utils = {
         proxifyImage: function(url) {
@@ -238,8 +252,8 @@ BeamExtended = function() {
 
                 $messages.append(
                     $('<div>')
-                        .addClass('message')
-                        .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
@@ -248,11 +262,11 @@ BeamExtended = function() {
         } else {
             $messages.append(
                 $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                .addClass('message')
+                .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                        .addClass('message-body')
-                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br>To set your custom colored username, please tweet <a href="http://ctt.ec/85332" target="_blank">@Exuviax</a><br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                    .addClass('message-body')
+                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br>To set your custom colored username, please tweet <a href="http://ctt.ec/85332" target="_blank">@Exuviax</a><br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
@@ -269,6 +283,10 @@ BeamExtended = function() {
     //endregion
     var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css">');
     $('head').append($cssLink);
+    var $cssLinkQTip = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/jquery.qtip.min.css">');
+    $('head').append($cssLinkQTip);
+    var $jsQTip = $('<script type="text/javascript" href="https://exudev.com/BeX/Dependencies/jquery.qtip.min.js"></script>');
+    $('head').append($jsQTip);
 
     function overrideMessageBody($messageBody) {
         var messageRole = $messageBody.parent().attr('data-role');
@@ -309,7 +327,7 @@ BeamExtended = function() {
                 if (!twitchEmotes.hasOwnProperty(i)) continue;
                 emote = twitchEmotes[i];
                 if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                    temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
+                    temp = $('<div class="tooltip-content">' + emote.emote).append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
                     messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                     messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
                 }

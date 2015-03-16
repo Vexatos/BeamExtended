@@ -4,4 +4,19 @@
 }, {
     "emote": "RaccoonOh",
     "image_id": 2
+}, {
+    "emote": "CartoonRacco",
+    "image_id": 3
+}, {
+    "emote": "FatRaccoon",
+    "image_id": 4
+}, {
+    "emote": "RaccoonPickUp",
+    "image_id": 5
+}, {
+    "emote": "RaccoonLove",
+    "image_id": 6
+}, {
+    "emote": "RaccoonScurry",
+    "image_id": 7
 }]

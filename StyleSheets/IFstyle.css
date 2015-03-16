@@ -14,8 +14,8 @@
     border-left: 3px solid #37ED3B;
 }
 .chat-panel .message[data-role~="Premium"] {
-    border-right: 3px solid #c642ea;
-    border-left: 3px solid #c642ea;
+    border-right: 3px solid #c642ea!important;
+    border-left: 3px solid #c642ea!important;
 }
 .chat-panel .message[data-role~="ExuDev"] .message-author {
     color: #00FFFF;
@@ -23,10 +23,16 @@
     padding-left: 24px;
     padding-bottom: 20px;
 }
-.chat-panel .message[data-role~="ExuAmbassador"] .message-author {
-    color: #FFCB00;
-    background: url('https://i.imgur.com/CXCsQnZ.png') no-repeat;
+.chat-panel .message[data-role~="ExuTSSN"] .message-author {
+    background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
     padding-left: 20px;
+    padding-bottom: 20px;
+}
+.chat-panel .message[data-role~="ExuVerified"] .message-author {
+    color: #9800FF;
+    background: url('http://i.imgur.com/9pUNa4P.png') no-repeat;
+    padding-left: 24px;
+    padding-bottom: 20px;
 }
 .chat-panel .message[data-role~="ExuMessage"] {
     border-right: 3px solid #0003FF;
