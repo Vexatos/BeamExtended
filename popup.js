@@ -7,5 +7,16 @@ $("document").ready(function() {
 			items.options[$(this).attr("id")] = $(this).prop("checked");
 			chrome.storage.sync.set(items);
 		});
+		
+		$("#bexbadges").click(function() {
+			$("#twitchbadges").prop("checked", false);
+			items.options.twitchbadges = false;
+			chrome.storage.sync.set(items);
+		});
+		$("#twitchbadges").click(function() {
+			$("#bexbadges").prop("checked", false);
+			items.options.bexbadges = false;
+			chrome.storage.sync.set(items);
+		});
 	});
 });
