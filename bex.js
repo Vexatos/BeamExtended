@@ -55,8 +55,10 @@ BeamExtended = function() {
     } else if ((channel == 'mindlesspuppetz') || (channel == 'siggy') || (channel == 'blackhawk120') || (channel == 'ziteseve') || (channel == 'squeaker') || (channel == 'akujitube') || (channel == 'artdude543') || (channel == 'lilmac21') || (channel == 'icanhascookie69') || (channel == 'cadillac_don')) {
         // Probably a better way to do this...
         styleChannel = 'tssnStyle';
+    } else if (bexoptions.twitchbadges == true) {
+        styleChannel = 'styleTwitch';
     } else {
-        styleChannel = 'style'
+        styleChannel = 'style';
     }
 
     var username = '';
@@ -295,24 +297,17 @@ BeamExtended = function() {
         if (bexoptions.linkimages == true) {
             $messageBody.find('a').each(function() {
                 if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
-                    var original = $('<div>').append($(this).clone()).html();
-
+                    
                     var $imgContainer = $('<div>').addClass('imgContainer').mouseover(function() {
                         $(this).find('.delete').show();
                     }).mouseout(function() {
                         $(this).find('.delete').hide();
                     });
+					
+					$(this).replaceWith($imgContainer);
 
                     $imgContainer.append($('<img>').attr('src', this.href));
-
-                    $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
-                        target: '_blank',
-                        href: this.href
-                    })).append($('<div>').addClass('remove btn').text('Remove').click(function() {
-                        $imgContainer.replaceWith(original);
-                    }));
-
-                    $(this).replaceWith($imgContainer);
+					                  
                 }
             });
         }
