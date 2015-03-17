@@ -8,6 +8,29 @@ Extend the unextended potential of Beam!
 
 This extension will expand the use of Beam.pro from adding custom emotes, to everything you love from Twitch/Hitbox and more
 
+## Planned features
+* Custom background images
+* More commands (Such as /me /timeout and more)
+* Integration with BExBot (Our custom Chat bot)
+
+## Current features
+* Custom Channel Emotes
+* Twitch Emotes
+* Links to images
+* Better Mentions
+* BEx Badges - https://pbs.twimg.com/media/CASxF1zU0AASEVX.jpg
+* Twitch Badges - Image soon
+* Group Badges
+* Verified Badges
+
+
+## Grandfathered features
+* Username Colors
+* Donation Perks
+
+## Current fixes
+* More noticeable mentions!
+
 ## Installation and Use
 
 To get the extension, first make sure your bookmark bar is visible!
@@ -37,27 +60,6 @@ Now once in someone's channel on Beam, just click the bookmark to activate it!
 ![Alt text](http://puu.sh/fINb9/19b6b48f03.jpg)
 
 If you notice the extension isn't behaving as should, refresh the page and reactivate the bookmark. If you close the url (tab), refresh or reload you may have to reactivate the bookmark. :)
-
-## Planned features
-* Custom background images
-* [PLANNED FOR NEXT UPDATE] Badges in chat (on/off)
-* More commands (Such as /me /timeout and more)
-* Integration with ExuBot (Our custom Chat bot)
-
-## Current features
-* Custom Channel Emotes
-* Twitch Emotes
-* Links to images
-* Better Mentions
-
-## Grandfathered features
-* Username Colors
-* Donation Perks
-
-## Current fixes
-* More noticeable mentions!
-
-
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
