@@ -7,7 +7,7 @@ if (typeof BeamExtendedInstance != 'undefined') {
 }
 
 BeamExtended = function() {
-    var VERSION = '1.0.2';
+    var VERSION = '1.0.3';
 
     var twitchEmoteTemplate = '';
     var twitchEmotes = [];
@@ -276,7 +276,7 @@ BeamExtended = function() {
                 .attr('data-role', 'ExuMessage').append(
                     $('<div>')
                     .addClass('message-body')
-                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br>To set your custom colored username, please tweet <a href="http://ctt.ec/85332" target="_blank">@Exuviax</a><br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
