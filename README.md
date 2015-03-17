@@ -1,9 +1,11 @@
 This repo is scheduled for massive changes :D
 
-# Skip this boring process and just get BeX on Google Chrome http://goo.gl/Ewd2XN
+# Addons
+* BEx on Google Chrome - http://goo.gl/Ewd2XN
+* BEx on FireFox Addons - No link available
 
 
-# BeamExtended
+# BeamExtended (BEx)
 Extend the unextended potential of Beam!
 
 This extension will expand the use of Beam.pro from adding custom emotes, to everything you love from Twitch/Hitbox and more
