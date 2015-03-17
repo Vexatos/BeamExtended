@@ -55,8 +55,8 @@ BeamExtended = function() {
     } else if ((channel == 'mindlesspuppetz') || (channel == 'siggy') || (channel == 'blackhawk120') || (channel == 'ziteseve') || (channel == 'squeaker') || (channel == 'akujitube') || (channel == 'artdude543') || (channel == 'lilmac21') || (channel == 'icanhascookie69') || (channel == 'cadillac_don')) {
         // Probably a better way to do this...
         styleChannel = 'tssnStyle';
-    } else if (bexoptions.twitchbadges == true) {
-        styleChannel = 'styleTwitch';
+    } else if (bexoptions.bexbadges == true) {
+        styleChannel = 'bexStyle';
     } else {
         styleChannel = 'style';
     }
@@ -79,7 +79,7 @@ BeamExtended = function() {
     });
 
     setInterval(function() {
-        if ((bexoptions.twitchbadges == true) && (styleChannel != 'styleTwitch')) {
+        if ((bexoptions.twitchbadges == true) && (styleChannel != 'bexStyle')) {
             location.reload();
         } else if ((bexoptions.twitchbadges == false) && (styleChannel != 'style')) {
             location.reload();
