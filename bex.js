@@ -336,6 +336,7 @@ BeamExtended = function() {
         if (bexoptions.linkimages == true) {
             $messageBody.find('a').each(function() {
                 if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
+                    var original = $('<div>').append($(this).clone()).html();
 
                     var $imgContainer = $('<div>').addClass('imgContainer').mouseover(function() {
                         $(this).find('.delete').show();
@@ -346,6 +347,13 @@ BeamExtended = function() {
                     $(this).replaceWith($imgContainer);
 
                     $imgContainer.append($('<img>').attr('src', this.href));
+
+                    $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
+                        target: '_blank',
+                        href: this.href
+                    })).append($('<div>').addClass('remove btn').text('Remove(Double-Click)').click(function() {
+                        $imgContainer.replaceWith($('<div>').append(original))
+                    }));
 
                 }
             });
