@@ -84,7 +84,7 @@
     padding-left: 20px;
     padding-bottom: 20px;
 }
-.chat-panel .message[data-role~="TheExuBot"] .message-body {
+.chat-panel .message[data-role~="TheBExBot"] .message-body {
     color: #FF0000 !important;
 }
 .chat-panel .message .imgContainer {

@@ -1,7 +1,7 @@
 {
     "BExDev": [
-        "tatdk",
         "exuviax",
+        "tatdk",
         "xero",
         "valandrah",
         "tromino",
@@ -25,7 +25,8 @@
         "shripe",
         "mangermouse",
         "popskyy",
-		"mradder"
+        "mradder",
+        "exuviax"
     ],
     "BExVerified": [
         "popskyy"
@@ -36,7 +37,7 @@
         "exudev",
         "scottybot",
         "derpabot",
-		"bexbot"
+        "bexbot"
     ],
     "BExIFStaff": [
         "exuviax",
@@ -53,7 +54,7 @@
     "TheBExBot": [
         "bexbot",
         "exudev",
-		"bexdev"
+        "bexdev"
     ],
     "BExTSSN": [
         "mindlesspuppetz",

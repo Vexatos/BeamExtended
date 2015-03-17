@@ -41,6 +41,8 @@ BeamExtended = function() {
     var secondColors = {};
 
     var triggeredAlerts = [];
+  
+    var tssnCrew = ['mindlesspuppetz','siggy','blackhawk120','ziteseve','squeaker','akujitube','artdude543','lilmac21','icanhascookie69','cadillac_don'];
 
     var timeoutAlertChecker;
     var timeoutColorGetter;
@@ -50,23 +52,43 @@ BeamExtended = function() {
     var pathname = window.location.pathname;
     var channel = pathname.toLowerCase().replace("/", "");
 
-    if (channel == 'ifstudios') {
-        styleChannel = 'IFstyle';
-    } else if ((channel == 'mindlesspuppetz') || (channel == 'siggy') || (channel == 'blackhawk120') || (channel == 'ziteseve') || (channel == 'squeaker') || (channel == 'akujitube') || (channel == 'artdude543') || (channel == 'lilmac21') || (channel == 'icanhascookie69') || (channel == 'cadillac_don')) {
-        // Probably a better way to do this...
-        styleChannel = 'tssnStyle';
-    } else if (bexoptions.bexbadges == true) {
-        styleChannel = 'bexStyle';
-    } else {
-        styleChannel = 'style';
+    function GetStylesheet() {
+        if (bexoptions.bexbadges == true) {
+            if (channel == 'ifstudios') {
+                return 'bexBadgesIFStudios'
+            } else if (tssnCrew.indexOf(channel) > -1) {
+                return 'bexBadgestssnStyle';
+            } else {
+                return 'bexStyle'
+            }
+        } else {
+            if (channel == 'ifstudios') {
+                return 'IFstyle'
+            } else if (tssnCrew.indexOf(channel) > -1) {
+                return 'tssnStyle';
+            } else {
+                return 'style'
+            }
+        }
     }
+    styleChannel = GetStylesheet();
+  
+    setInterval(function() {
+        if (bexoptions.bexbadges == true && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) < 0) {
+            styleChannel = GetStylesheet();
+            $cssLink.attr('href','https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+        } else if (bexoptions.bexbadges == false && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) > -1) {
+            styleChannel = GetStylesheet();
+            $cssLink.attr('href','https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+        }
+    }, 1000);
 
     var username = '';
 
     // Create the tooltips only when document ready
     $(document).ready(function() {
         // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
-        $('exu-emote').each(function() {
+        $('.exu-emote').each(function() {
             $(this).qtip({
                 content: {
                     text: function(api) {
@@ -78,13 +100,7 @@ BeamExtended = function() {
         });
     });
 
-    setInterval(function() {
-        if ((bexoptions.twitchbadges == true) && (styleChannel != 'bexStyle')) {
-            location.reload();
-        } else if ((bexoptions.twitchbadges == false) && (styleChannel != 'style')) {
-            location.reload();
-        }
-    }, 1000);
+
 
     var Utils = {
         proxifyImage: function(url) {
@@ -305,17 +321,17 @@ BeamExtended = function() {
         if (bexoptions.linkimages == true) {
             $messageBody.find('a').each(function() {
                 if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
-                    
+
                     var $imgContainer = $('<div>').addClass('imgContainer').mouseover(function() {
                         $(this).find('.delete').show();
                     }).mouseout(function() {
                         $(this).find('.delete').hide();
                     });
-					
-					$(this).replaceWith($imgContainer);
+
+                    $(this).replaceWith($imgContainer);
 
                     $imgContainer.append($('<img>').attr('src', this.href));
-					                  
+
                 }
             });
         }
