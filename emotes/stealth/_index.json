@@ -1,0 +1,17 @@
+[{
+    "emote": "stealthMLG",
+    "image_id": 1,
+}, {
+    "emote": "stealthHunk",
+    "image_id": 2,
+}, {
+	"emote": "stealthFood",
+	"image_id": 3
+}, {
+	"emote": "stealthDrink",
+	"image_id": 4
+}, {
+	"emote": "stealthEat",
+	"image_id": 5,
+	"image_ext": "jpg"
+}]

@@ -6,4 +6,8 @@
     "emote": "shripeBBT",
     "image_id": 2,
     "image_ext": "jpg"
+}, {
+    "emote": "Shripe",
+    "image_id": 3,
+    "image_ext": "jpg"
 }]

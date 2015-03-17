@@ -1,5 +1,5 @@
 {
-    "ExuDev": [
+    "BExDev": [
         "tatdk",
         "techgo",
         "exuviax",
@@ -11,7 +11,7 @@
         "graphic",
         "mradder"
     ],
-    "ExuDonator": [
+    "BExDonator": [
         "trevin",
         "nate",
         "greg",
@@ -27,19 +27,21 @@
         "xero",
         "shripe",
         "mangermouse",
+        "popskyy",
+		"mradder"
+    ],
+    "BExVerified": [
         "popskyy"
     ],
-    "ExuVerified": [
-        "popskyy"
-    ],
-    "ExuBot": [
+    "BExBot": [
         "exubot",
         "tssnbot",
         "exudev",
         "scottybot",
-        "derpabot"
+        "derpabot",
+		"bexbot"
     ],
-    "ExuIFStaff": [
+    "BExIFStaff": [
         "exuviax",
         "ifstudios",
         "wolf",
@@ -51,11 +53,12 @@
         "saimbettan",
         "favremysabre"
     ],
-    "TheExuBot": [
-        "exubot",
-        "exudev"
+    "TheBExBot": [
+        "bexbot",
+        "exudev",
+		"bexdev"
     ],
-    "ExuTSSN": [
+    "BExTSSN": [
         "mindlesspuppetz",
         "siggy",
         "blackhawk120",
