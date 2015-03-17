@@ -45,11 +45,13 @@ If you notice the extension isn't behaving as should, refresh the page and react
 * Integration with ExuBot (Our custom Chat bot)
 
 ## Current features
-* Username Colors
 * Custom Channel Emotes
 * Twitch Emotes
 * Links to images
 * Better Mentions
+
+## Grandfathered features
+* Username Colors
 * Donation Perks
 
 ## Current fixes
