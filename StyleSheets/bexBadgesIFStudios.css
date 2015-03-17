@@ -5,6 +5,9 @@
     background-color: rgba(0, 255, 54, 0.12);
     -webkit-border-radius: 3px;
 }
+.exu-emote {
+    margin-bottom: -10px;
+}
 .chat-panel .message[data-role~="BExIFStaff"] .message-author {
     background: url('http://i.imgur.com/Tgt956w.png') no-repeat;
     padding-left: 20px;
@@ -39,7 +42,6 @@
     border-right: none!important;
     border-left: none!important;
 }
-
 .chat-panel .message[data-role~="Mod"] {
     color: #37ED3B;
     background: url('https://exudev.ca/BeX/BexBadges/mod.png') no-repeat;

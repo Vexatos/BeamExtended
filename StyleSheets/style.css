@@ -8,6 +8,9 @@
     border-right: 3px solid #FFFFFF;
     border-left: 3px solid #FFFFFF;
 }
+.exu-emote {
+    margin-bottom: -10px;
+}
 .chat-panel .message[data-role~="Mod"] {
     color: #37ED3B!important;
     border-right: 3px solid #37ED3B;

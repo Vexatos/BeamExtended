@@ -7,6 +7,9 @@
     border-right: none!important;
     border-left: none!important;
 }
+.exu-emote {
+    margin-bottom: -10px;
+}
 .chat-panel .message[data-role~="Owner"] {
     color: #FFFFFF;
     background: url('https://exudev.ca/BeX/Twitchbadges/broad.png') no-repeat;

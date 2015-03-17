@@ -41,8 +41,8 @@ BeamExtended = function() {
     var secondColors = {};
 
     var triggeredAlerts = [];
-  
-    var tssnCrew = ['mindlesspuppetz','siggy','blackhawk120','ziteseve','squeaker','akujitube','artdude543','lilmac21','icanhascookie69','cadillac_don'];
+
+    var tssnCrew = ['mindlesspuppetz', 'siggy', 'blackhawk120', 'ziteseve', 'squeaker', 'akujitube', 'artdude543', 'lilmac21', 'icanhascookie69', 'cadillac_don'];
 
     var timeoutAlertChecker;
     var timeoutColorGetter;
@@ -61,6 +61,14 @@ BeamExtended = function() {
             } else {
                 return 'bexStyle'
             }
+        } else if (bexoptions.twitchbadges == true) {
+            if (channel == 'ifstudios') {
+                return 'twitchbadgesIFStudios'
+            } else if (tssnCrew.indexOf(channel) > -1) {
+                return 'twitchbadgestssnStyle';
+            } else {
+                return 'twitchbadgesStyle'
+            }
         } else {
             if (channel == 'ifstudios') {
                 return 'IFstyle'
@@ -72,15 +80,22 @@ BeamExtended = function() {
         }
     }
     styleChannel = GetStylesheet();
-  
+
     setInterval(function() {
         if (bexoptions.bexbadges == true && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) < 0) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href','https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
         } else if (bexoptions.bexbadges == false && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) > -1) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href','https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+        } else if (bexoptions.twitchbadges == true && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) < 0) {
+            styleChannel = GetStylesheet();
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+        } else if (bexoptions.twitchbadges == false && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) > -1) {
+            styleChannel = GetStylesheet();
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
         }
+
     }, 1000);
 
     var username = '';

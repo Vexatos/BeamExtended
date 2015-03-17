@@ -8,6 +8,9 @@
     border-right: none!important;
     border-left: none!important;
 }
+.exu-emote {
+    margin-bottom: -10px;
+}
 .chat-panel .message[data-role~="Owner"] {
     color: #FFFFFF!important;
     background: url('https://exudev.ca/BeX/BexBadges/broad.png') no-repeat;
