@@ -1,0 +1,102 @@
+.chat-panel .message[data-role~="Admin"],
+.chat-panel .message[data-role~="Owner"],
+.chat-panel .message[data-role~="Gmod"],
+.chat-panel .message[data-role~="Mod"],
+.chat-panel .message[data-role~="Premium"] {
+    padding-left: 21px;
+    padding-top: 0px;
+    padding-bottom: 13px;
+    width: 20px;
+    height: 20px;
+    border-right: none!important;
+    border-left: none!important;
+}
+
+.chat-panel .message[data-role~="Admin"] {
+    color: #B52535;
+    background: url('https://exudev.ca/BeX/BexBadges/admin.png') no-repeat;
+}
+.chat-panel .message[data-role~="Owner"] {
+    color: #FFFFFF;
+    background: url('https://exudev.ca/BeX/BexBadges/broad.png') no-repeat;
+}
+.chat-panel .message[data-role~="Gmod"] {
+    color: #37ED3B;
+    background: url('https://exudev.ca/BeX/BexBadges/gmod.png') no-repeat;
+}
+.chat-panel .message[data-role~="Developer"] {
+    color: #ecbf37;
+    padding-top: 0px;
+    padding-bottom: 13px;
+    border-right: none!important;
+    border-left: none!important;
+}
+.chat-panel .message[data-role~="Mod"] {
+    color: #37ED3B;
+    background: url('https://exudev.ca/BeX/BexBadges/mod.png') no-repeat;
+}
+.chat-panel .message[data-role~="Premium"] {
+    color: #c642ea!important;
+    background: url('https://exudev.ca/BeX/BexBadges/pro.png') no-repeat;
+}
+.chat-panel .message[data-role~="ExuDev"] .message-author {
+    color: #00FFFF;
+    background: url('https://i.imgur.com/N4LsfN5.png') no-repeat;
+    padding-left: 24px;
+    padding-bottom: 20px;
+}
+.chat-panel .message[data-role~="ExuVerified"] .message-author {
+    color: #9800FF;
+    background: url('http://i.imgur.com/9pUNa4P.png') no-repeat;
+    padding-left: 24px;
+    padding-bottom: 20px;
+}
+.chat-panel .message[data-role~="ExuMessage"] {
+    border-right: 3px solid #0003FF;
+    border-left: 3px solid #0003FF;
+    background: -webkit-linear-gradient(left, rgba(0, 52, 255, 0.3) 0%, rgba(0, 32, 255, 0.1) 7%, rgba(0, 42, 255, 0.1) 95%, rgba(0, 78, 247, 0.3) 100%);
+    background: linear-gradient(left, rgba(0, 52, 255, 0.3) 0%, rgba(0, 32, 255, 0.1) 7%, rgba(0, 42, 255, 0.1) 95%, rgba(0, 78, 247, 0.3) 100%);
+    text-align: center;
+}
+.chat-panel .message[data-role~="ExuDonator"] .message-author {
+    color: #FFFFFF;
+    text-shadow: 0px 0px 13px rgba(255, 255, 255, 1);
+    display: inline;
+    position: relative;
+}
+.chat-panel .message[data-role~="ExuBot"] .message-author {
+    background: url('https://i.imgur.com/ddVOAAS.png') no-repeat;
+    padding-left: 20px;
+}
+.chat-panel .message[data-role~="ExuTSSN"] .message-author {
+    background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.chat-panel .message[data-role~="TheExuBot"] .message-body {
+    color: #FF0000 !important;
+}
+.chat-panel .message .imgContainer {
+    max-width: 95%;
+    position: relative;
+}
+.chat-panel .message .imgContainer img {
+    max-width: 100%;
+    border-radius: 14px;
+    max-height: 150px;
+}
+.chat-panel .message .imgContainer .delete {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #FFFFFF;
+}
+.chat-panel .tagged {
+    font-weight: 700;
+    background-color: rgba(121, 0, 0, 0.35)
+}

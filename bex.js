@@ -78,6 +78,14 @@ BeamExtended = function() {
         });
     });
 
+    setInterval(function() {
+        if ((bexoptions.twitchbadges == true) && (styleChannel != 'styleTwitch')) {
+            location.reload();
+        } else if ((bexoptions.twitchbadges == false) && (styleChannel != 'style')) {
+            location.reload();
+        }
+    }, 1000);
+
     var Utils = {
         proxifyImage: function(url) {
             if (Utils.startsWithIgnoreCase(url, 'http://')) {
@@ -231,7 +239,7 @@ BeamExtended = function() {
             customChannelEmotes = emotes;
 
             if (channel == 'exuviax') {
-                $messages.append(
+                $messages.prepend(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
@@ -252,7 +260,7 @@ BeamExtended = function() {
                     $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 }
 
-                $messages.append(
+                $messages.prepend(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
@@ -262,7 +270,7 @@ BeamExtended = function() {
 
             }
         } else {
-            $messages.append(
+            $messages.prepend(
                 $('<div>')
                 .addClass('message')
                 .attr('data-role', 'ExuMessage').append(
