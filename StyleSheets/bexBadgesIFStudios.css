@@ -70,14 +70,16 @@
 .chat-panel .message[data-role~="BExDev"] .message-author {
     color: #00FFFF;
     background: url('https://i.imgur.com/N4LsfN5.png') no-repeat;
-    padding-left: 24px;
-    padding-bottom: 20px;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
 }
 .chat-panel .message[data-role~="BExVerified"] .message-author {
     color: #9800FF;
     background: url('http://i.imgur.com/9pUNa4P.png') no-repeat;
-    padding-left: 24px;
-    padding-bottom: 20px;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
 }
 .chat-panel .message[data-role~="ExuMessage"] {
     border-right: 3px solid #0003FF;
@@ -94,12 +96,15 @@
 }
 .chat-panel .message[data-role~="BExBot"] .message-author {
     background: url('https://i.imgur.com/ddVOAAS.png') no-repeat;
-    padding-left: 20px;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
 }
 .chat-panel .message[data-role~="BExTSSN"] .message-author {
     background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
 }
 .chat-panel .message[data-role~="TheBExBot"] .message-body {
     color: #FF0000 !important;
