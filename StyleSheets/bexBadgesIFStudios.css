@@ -9,6 +9,7 @@
 
 .exu-emote {
     margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 .chat-panel .message[data-role~="BExIFStaff"] .message-author {
