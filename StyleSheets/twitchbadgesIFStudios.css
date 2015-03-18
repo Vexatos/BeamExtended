@@ -16,47 +16,57 @@
     color: #B52535;
     background: url('https://exudev.ca/BeX/Twitchbadges/admin.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
-    background-size: 20px 20px;
-    border-right: none!important;
-    border-left: none!important;
+    padding-top: 7.5px;
+    background-size: 23px 23px;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="Owner"] {
     color: #FFFFFF;
     background: url('https://exudev.ca/BeX/Twitchbadges/broad.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
-    background-size: 20px 20px;
-    border-right: none!important;
-    border-left: none!important;
+    padding-top: 7.5px;
+    background-size: 23px 23px;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="Gmod"] {
     color: #37ED3B;
     background: url('https://exudev.ca/BeX/Twitchbadges/gmod.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
-    background-size: 20px 20px;
-    border-right: none!important;
-    border-left: none!important;
+    padding-top: 7.5px;
+    background-size: 23px 23px;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 
 .chat-panel .message[data-role~="Mod"] {
     color: #37ED3B;
     background: url('https://exudev.ca/BeX/Twitchbadges/mod.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
-    background-size: 20px 20px;
-    border-right: none!important;
-    border-left: none!important;
+    padding-top: 7.5px;
+    background-size: 23px 23px;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="Premium"] {
     color: #c642ea!important;
     background: url('https://exudev.ca/BeX/Twitchbadges/pro.png') no-repeat;
-    padding-left: 23px;
-    padding-top: 0px;
-    background-size: 20px 20px;
-    border-right: none!important;
-    border-left: none!important;
+    padding-left: 21px;
+    padding-top: 7.5px;
+    background-size: 23px 23px;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="BExDev"] .message-author {
     color: #00FFFF;

@@ -2,10 +2,12 @@
     color: #B52535!important;
     background: url('https://exudev.ca/BeX/BexBadges/admin.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
+    padding-top: 7.5px;
     background-size: 23px 23px;
-    border-right: none!important;
-    border-left: none!important;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .exu-emote {
     margin-bottom: -10px;
@@ -14,38 +16,46 @@
     color: #FFFFFF!important;
     background: url('https://exudev.ca/BeX/BexBadges/broad.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
+    padding-top: 7.5px;
     background-size: 23px 23px;
-    border-right: none!important;
-    border-left: none!important;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="Gmod"] {
     color: #37ED3B!important;
     background: url('https://exudev.ca/BeX/BexBadges/gmod.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
+    padding-top: 7.5px;
     background-size: 23px 23px;
-    border-right: none!important;
-    border-left: none!important;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 
 .chat-panel .message[data-role~="Mod"] {
     color: #37ED3B!important;
     background: url('https://exudev.ca/BeX/BexBadges/mod.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
+    padding-top: 7.5px;
     background-size: 23px 23px;
-    border-right: none!important;
-    border-left: none!important;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="Premium"] {
     color: #c642ea!important;
     background: url('https://exudev.ca/BeX/BexBadges/pro.png') no-repeat;
     padding-left: 21px;
-    padding-top: 0px;
+    padding-top: 7.5px;
     background-size: 23px 23px;
-    border-right: none!important;
-    border-left: none!important;
+    font-size: 15px;
+    background-position: 0px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 .chat-panel .message[data-role~="BExDev"] .message-author {
     color: #00FFFF;
