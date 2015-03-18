@@ -105,3 +105,45 @@
   font-weight: 700;
   background-color: rgba(121, 0, 0, 0.35);
 }
+
+.navbar {
+  background: rgba(60, 173, 84, 0.12);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 255, 54, 0.12);
+  -webkit-border-radius: 3px;
+}
+
+.chat-panel .message[data-role~="Admin"],
+.chat-panel .message[data-role~="Owner"],
+.chat-panel .message[data-role~="Gmod"],
+.chat-panel .message[data-role~="Mod"],
+.chat-panel .message[data-role~="Premium"] {
+  padding-left: 21px;
+  padding-top: 0;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+.chat-panel .message[data-role~="Admin"] {
+  background-image: url("https://exudev.ca/BeX/Twitchbadges/admin.png");
+}
+
+.chat-panel .message[data-role~="Owner"] {
+  background-image: url("https://exudev.ca/BeX/Twitchbadges/broad.png");
+}
+
+.chat-panel .message[data-role~="Gmod"] {
+  background-image: url("https://exudev.ca/BeX/Twitchbadges/gmod.png");
+}
+
+.chat-panel .message[data-role~="Mod"] {
+  background-image: url("https://exudev.ca/BeX/Twitchbadges/mod.png");
+}
+
+.chat-panel .message[data-role~="Premium"] {
+  background-image: url("https://exudev.ca/BeX/Twitchbadges/pro.png");
+}
