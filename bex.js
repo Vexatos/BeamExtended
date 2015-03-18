@@ -215,16 +215,9 @@ BeamExtended = function() {
     // })
 
     //region Chat Colors
-    function getColors() {
-        $.getJSON('https://exudev.ca/BeX/UsernameColors.json', function(data) {
-            colors = data;
-        });
-        timeoutColorGetter = setTimeout(function() {
-            getColors();
-        }, 6e4);
-    }
-
-    getColors();
+    $.getJSON('https://exudev.ca/BeX/UsernameColors.json', function(data) {
+        colors = data;
+    });
     //endregion
 
     //region Emotes
