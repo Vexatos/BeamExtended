@@ -1,0 +1,35 @@
+@import "beamRoles";
+@import "bexRoles";
+@import "bexMessages";
+
+.exu-emote {
+    margin-bottom: -10px;
+}
+
+.chat-panel .message .imgContainer {
+    max-width: 95%;
+    position: relative;
+}
+
+.chat-panel .message .imgContainer img {
+    max-width: 100%;
+    border-radius: 14px;
+    max-height: 150px;
+}
+
+.chat-panel .message .imgContainer .delete {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #FFFFFF;
+}
+
+.chat-panel .tagged {
+    font-weight: 700;
+    background-color: rgba(121, 0, 0, 0.35)
+}

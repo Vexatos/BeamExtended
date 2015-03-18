@@ -1,0 +1,33 @@
+.chat-panel .message[data-role~="Admin"],
+.chat-panel .message[data-role~="Owner"],
+.chat-panel .message[data-role~="Gmod"],
+.chat-panel .message[data-role~="Mod"],
+.chat-panel .message[data-role~="Premium"] {
+    padding-left: 21px;
+    padding-top: 0;
+    padding-bottom: 13px;
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    border-right: none !important;
+    border-left: none !important;
+}
+
+.chat-panel .message[data-role~="Admin"] {
+    background-image: url('https://exudev.ca/BeX/BexBadges/admin.png');
+}
+
+.chat-panel .message[data-role~="Owner"] {
+    background-image: url('https://exudev.ca/BeX/BexBadges/broad.png');
+}
+
+.chat-panel .message[data-role~="Gmod"] {
+    background-image: url('https://exudev.ca/BeX/BexBadges/gmod.png');
+}
+
+.chat-panel .message[data-role~="Mod"] {
+    background-image: url('https://exudev.ca/BeX/BexBadges/mod.png');
+}
+
+.chat-panel .message[data-role~="Premium"] {
+    background-image: url('https://exudev.ca/BeX/BexBadges/pro.png');
+}

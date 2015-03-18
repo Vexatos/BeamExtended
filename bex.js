@@ -52,46 +52,41 @@ BeamExtended = function() {
     var pathname = window.location.pathname;
     var channel = pathname.toLowerCase().replace("/", "");
 
+    /**
+     * Get name of stylesheet
+     *
+     * @returns {string}
+     */
     function GetStylesheet() {
-        if (bexoptions.bexbadges == true) {
-            if (channel == 'ifstudios') {
-                return 'bexBadgesIFStudios'
-            } else if (tssnCrew.indexOf(channel) > -1) {
-                return 'bexBadgestssnStyle';
-            } else {
-                return 'bexStyle'
-            }
-        } else if (bexoptions.twitchbadges == true) {
-            if (channel == 'ifstudios') {
-                return 'twitchbadgesIFStudios'
-            } else if (tssnCrew.indexOf(channel) > -1) {
-                return 'twitchbadgestssnStyle';
-            } else {
-                return 'twitchbadgesStyle'
-            }
-        } else {
-            if (channel == 'ifstudios') {
-                return 'IFstyle'
-            } else if (tssnCrew.indexOf(channel) > -1) {
-                return 'tssnStyle';
-            } else {
-                return 'style'
-            }
+        var stylesheet = '';
+
+        if (channel == 'ifstudios') {
+            stylesheet += 'ifstudios.';
+        } else if (tssnCrew.indexOf(channel) > -1) {
+            stylesheet += 'tssn.';
         }
+
+        if (bexoptions.bexbadges == true) {
+            stylesheet += 'bexbadges.';
+        } else if (bexoptions.twitchbadges == true) {
+            stylesheet += 'twitchbadges.';
+        }
+
+        return stylesheet + 'style';
     }
     styleChannel = GetStylesheet();
 
     setInterval(function() {
-        if (bexoptions.bexbadges == true && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) < 0) {
+        if (bexoptions.bexbadges == true && styleChannel.indexOf('bexbadges') < 0) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.bexbadges == false && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) > -1) {
+        } else if (bexoptions.bexbadges == false && styleChannel.indexOf('bexbadges') > -1) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.twitchbadges == true && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) < 0) {
+        } else if (bexoptions.twitchbadges == true && styleChannel.indexOf('twitchbadges') < 0) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.twitchbadges == false && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) > -1) {
+        } else if (bexoptions.twitchbadges == false && styleChannel.indexOf('twitchbadges') > -1) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
         }
@@ -273,7 +268,7 @@ BeamExtended = function() {
                 $messages.prepend(
                     $('<div>')
                     .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                    .attr('data-role', 'BExMessage').append(
                         $('<div>')
                         .addClass('message-body')
                         .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
@@ -294,7 +289,7 @@ BeamExtended = function() {
                 $messages.prepend(
                     $('<div>')
                     .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                    .attr('data-role', 'BExMessage').append(
                         $message
                     )
                 );
@@ -304,7 +299,7 @@ BeamExtended = function() {
             $messages.prepend(
                 $('<div>')
                 .addClass('message')
-                .attr('data-role', 'ExuMessage').append(
+                .attr('data-role', 'BExMessage').append(
                     $('<div>')
                     .addClass('message-body')
                     .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
@@ -473,7 +468,7 @@ BeamExtended = function() {
                 $messages.append(
                     $('<div>')
                     .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                    .attr('data-role', 'BExMessage').append(
                         $('<div>')
                         .addClass('message-body')
                         .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])

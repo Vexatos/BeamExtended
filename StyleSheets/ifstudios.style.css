@@ -105,3 +105,12 @@
   font-weight: 700;
   background-color: rgba(121, 0, 0, 0.35);
 }
+
+.chat-panel .message[data-role~="BExIFStaff"] .message-author {
+  background: url("http://i.imgur.com/Tgt956w.png") no-repeat;
+  padding-left: 20px;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.41);
+}
