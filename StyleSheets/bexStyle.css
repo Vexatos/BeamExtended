@@ -91,10 +91,11 @@
     position: absolute;
     left: 10px;
     top: 10px;
+    bottom: inherit;
     right: 10px;
     z-index: 100;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, .75);
-    border: 1px solid rgba(78, 97, 111, .35);
+    box-shadow: none!important;
+    border: none!important;
     transition: .3s all ease;
     transition: all .3s all ease ease;
 }
