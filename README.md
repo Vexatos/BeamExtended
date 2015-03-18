@@ -33,11 +33,11 @@ This extension will expand the use of Beam.pro from adding custom emotes, to eve
 ## Current fixes
 * More noticeable mentions!
 
-## Installation and Use
+## Installation and Use (OUTDATED)
 
 To get the extension, first make sure your bookmark bar is visible!
 
-``ctrl+shift+b`` or ``cmd+shift+b`` in chrome to show your bar
+``ctrl+shift+b`` or ``cmd+shift+b`` in FF to show your bar
 
 ``Right Click open space in URL bar and choose SHOW BOOKMARK BAR``
 
