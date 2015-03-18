@@ -84,16 +84,16 @@ BeamExtended = function() {
     setInterval(function() {
         if (bexoptions.bexbadges == true && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) < 0) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css' + Math.random);
         } else if (bexoptions.bexbadges == false && ['bexStyle', 'bexBadgestssnStyle', 'bexBadgesIFStudios'].indexOf(styleChannel) > -1) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css' + Math.random);
         } else if (bexoptions.twitchbadges == true && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) < 0) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css' + Math.random);
         } else if (bexoptions.twitchbadges == false && ['twitchbadgesStyle', 'twitchbadgestssnStyle', 'twitchbadgesIFStudios'].indexOf(styleChannel) > -1) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css' + Math.random);
         }
 
     }, 1000);
@@ -201,7 +201,7 @@ BeamExtended = function() {
     });
 
     //region Roles
-    $.getJSON('https://exudev.ca/BeX/config.json', function(data) {
+    $.getJSON('https://exudev.ca/BeX/config.json' + Math.random, function(data) {
         roles = data;
     });
     //endregion
@@ -221,7 +221,7 @@ BeamExtended = function() {
     //endregion
 
     //region Emotes
-    $.getJSON('https://exudev.ca/BeX/emotes/_index.json',
+    $.getJSON('https://exudev.ca/BeX/emotes/_index.json' + Math.random,
         /**
          * @param {{template: String, emotes: Object}} data
          */
@@ -314,13 +314,6 @@ BeamExtended = function() {
             onCustomChannelEmotesLoaded(null);
         });
     //endregion
-    //endregion
-    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css">');
-    $('head').append($cssLink);
-    var $cssLinkQTip = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/jquery.qtip.min.css">');
-    $('head').append($cssLinkQTip);
-    var $jsQTip = $('<script type="text/javascript" href="https://exudev.com/BeX/Dependencies/jquery.qtip.min.js"></script>');
-    $('head').append($jsQTip);
 
     function overrideMessageBody($messageBody) {
         var messageRole = $messageBody.parent().attr('data-role');
