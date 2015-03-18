@@ -1,18 +1,19 @@
+.navbar {
+    background: rgba(60, 173, 84, 0.12);
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 255, 54, 0.12);
+    -webkit-border-radius: 3px;
+}
 .chat-panel .message[data-role~="Admin"] {
-    color: #B52535!important;
     border-right: 3px solid #B52535;
     border-left: 3px solid #B52535;
 }
 .chat-panel .message[data-role~="Owner"] {
-    color: #FFFFFF!important;
     border-right: 3px solid #FFFFFF;
     border-left: 3px solid #FFFFFF;
 }
-.exu-emote {
-    margin-bottom: -10px;
-}
 .chat-panel .message[data-role~="Mod"] {
-    color: #37ED3B!important;
     border-right: 3px solid #37ED3B;
     border-left: 3px solid #37ED3B;
 }
@@ -56,6 +57,9 @@
 }
 .chat-panel .message[data-role~="TheBExBot"] .message-body {
     color: #FF0000 !important;
+}
+.exu-emote {
+    margin-bottom: -10px;
 }
 .chat-panel .message .imgContainer {
     max-width: 95%;
