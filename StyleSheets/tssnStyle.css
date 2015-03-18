@@ -28,9 +28,27 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+.chat-panel .message[data-role~="BExMusicVerified"] .message-author {
+    color: #9800FF;
+    background: url('https://exudev.ca/BeX/icons/verified.png') no-repeat;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
+}
+.chat-panel .chat-dialog {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,.75);
+  border: 1px solid rgba(78,97,111,.35);
+  transition: .3s all ease;
+  transition: all .3s all ease ease;
+}
 .chat-panel .message[data-role~="BExVerified"] .message-author {
     color: #9800FF;
-    background: url('http://i.imgur.com/9pUNa4P.png') no-repeat;
+    background: url('https://exudev.ca/BeX/icons/MusicBadge.png') no-repeat;
     padding-left: 22px;
     padding-bottom: 1px;
     background-position: -1px;
