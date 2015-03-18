@@ -1,18 +1,18 @@
+.navbar {
+    background: rgba(0, 0, 0, 0.41);
+}
 .chat-panel .message[data-role~="Admin"] {
-    color: #B52535!important;
     border-right: 3px solid #B52535;
     border-left: 3px solid #B52535;
-}
-.chat-panel .message[data-role~="Owner"] {
-    color: #FFFFFF!important;
-    border-right: 3px solid #FFFFFF;
-    border-left: 3px solid #FFFFFF;
 }
 .exu-emote {
     margin-bottom: -10px;
 }
+.chat-panel .message[data-role~="Owner"] {
+    border-right: 3px solid #FFFFFF;
+    border-left: 3px solid #FFFFFF;
+}
 .chat-panel .message[data-role~="Mod"] {
-    color: #37ED3B!important;
     border-right: 3px solid #37ED3B;
     border-left: 3px solid #37ED3B;
 }
@@ -24,6 +24,11 @@
     color: #00FFFF;
     background: url('https://i.imgur.com/N4LsfN5.png') no-repeat;
     padding-left: 24px;
+    padding-bottom: 20px;
+}
+.chat-panel .message[data-role~="BExTSSN"] .message-author {
+    background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
+    padding-left: 20px;
     padding-bottom: 20px;
 }
 .chat-panel .message[data-role~="BExVerified"] .message-author {
@@ -49,10 +54,9 @@
     background: url('https://i.imgur.com/ddVOAAS.png') no-repeat;
     padding-left: 20px;
 }
-.chat-panel .message[data-role~="BExTSSN"] .message-author {
-    background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
+.chat-panel .message[data-role~="BExIFStaff"] .message-author {
+    background: url('http://i.imgur.com/Tgt956w.png') no-repeat;
     padding-left: 20px;
-    padding-bottom: 20px;
 }
 .chat-panel .message[data-role~="TheBExBot"] .message-body {
     color: #FF0000 !important;
