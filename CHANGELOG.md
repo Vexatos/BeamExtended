@@ -1,3 +1,9 @@
+# 03/19/2015
+* Moved to an easier Stylesheet system
+* Fixed Chat Images not sticking
+* Added BUG/Suggestions to the Popup
+* Minor bug fixes
+
 # 03/18/2015
 * Added in BEx chat Badges
 * Added in Twitch chat Badges

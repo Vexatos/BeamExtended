@@ -1,3 +1,17 @@
+function beam_init()
+{
+	script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = "https://exudev.ca/BeX/dev/bex.js?"+Math.random();
+	thehead = document.getElementsByTagName('head')[0];
+	if(thehead) thehead.appendChild(script);
+	scripts = document.createElement('script');
+	scripts.type = 'text/javascript';
+	scripts.src = "https://exudev.ca/BeX/dev/background.js?"+Math.random();
+	theheads = document.getElementsByTagName('head')[0];
+	if(theheads) thehead.appendChild(script);
+
+}
 chrome.runtime.sendMessage("showicon");
 var loadedmt = false;
 
@@ -16,18 +30,4 @@ chrome.storage.onChanged.addListener(function() {
 	});
 });
 
-setInterval(function() {
-	if(!loadedmt && $(".messages")[0]) {
-		loadedmt = true;
-		var i = document.createElement("script");
-		i.src = chrome.extension.getURL("bex.js");
-		$("head")[0].appendChild(i);
-		$(i).remove();
-	} else if(loadedmt && !$(".messages")[0]) {
-		loadedmt = false;
-		var i = document.createElement("script");
-		$(i).text("BeamExtendedInstance.close();");
-		$("head")[0].appendChild(i);
-		$(i).remove();
-	}
-}, 3000);
+beam_init();

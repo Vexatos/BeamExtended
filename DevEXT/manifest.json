@@ -5,7 +5,7 @@
     "icons": {
         "256": "icon.png"
     },
-    "version": "1.0.4",
+    "version": "1.0.6",
 
     "content_scripts": [{
         "matches": ["*://beam.pro/*"],
@@ -23,6 +23,5 @@
         "storage",
         "cookies",
         "*://beam.pro/*"
-    ],
-    "web_accessible_resources": ["bex.js"]
+    ]
 }
