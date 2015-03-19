@@ -5,7 +5,7 @@
     "icons": {
         "256": "icon.png"
     },
-    "version": "1.0.6",
+    "version": "1.0.6.5",
 
     "content_scripts": [{
         "matches": ["*://beam.pro/*"],

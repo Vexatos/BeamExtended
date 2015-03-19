@@ -2,12 +2,12 @@ function beam_init()
 {
 	script = document.createElement('script');
 	script.type = 'text/javascript';
-	script.src = "https://exudev.ca/BeX/dev/bex.js?"+Math.random();
+	script.src = "https://exudev.ca/BeX//bex.js?"+Math.random();
 	thehead = document.getElementsByTagName('head')[0];
 	if(thehead) thehead.appendChild(script);
 	scripts = document.createElement('script');
 	scripts.type = 'text/javascript';
-	scripts.src = "https://exudev.ca/BeX/dev/background.js?"+Math.random();
+	scripts.src = "https://exudev.ca/BeX/background.js?"+Math.random();
 	theheads = document.getElementsByTagName('head')[0];
 	if(theheads) thehead.appendChild(script);
 
