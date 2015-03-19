@@ -12,12 +12,13 @@
     background: url('https://exudev.ca/BeX/Twitchbadges/admin.png') no-repeat;
     padding-left: 21px;
     padding-top: 7.5px;
-    background-size: 23px 23px;
+    background-size: 18px 18px;
     font-size: 15px;
     background-position: 0px 8px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
 }
+
 .chat-panel .message[data-role=Developer] {
     color: #ecbf37!important;
     background: url('https://beam.pro/img/raccoon.png') no-repeat;
@@ -40,8 +41,6 @@
     margin-right: none!important;
 }
 
-
-
 .exu-emote {
     margin-bottom: -10px;
     margin-top: -10px;
@@ -52,7 +51,7 @@
     background: url('https://exudev.ca/BeX/Twitchbadges/broad.png') no-repeat;
     padding-left: 21px;
     padding-top: 7.5px;
-    background-size: 23px 23px;
+    background-size: 18px 18px;
     font-size: 15px;
     background-position: 0px 8px;
     border-left: 3px solid transparent;
@@ -64,7 +63,7 @@
     background: url('https://exudev.ca/BeX/Twitchbadges/gmod.png') no-repeat;
     padding-left: 21px;
     padding-top: 7.5px;
-    background-size: 23px 23px;
+    background-size: 18px 18px;
     font-size: 15px;
     background-position: 0px 8px;
     border-left: 3px solid transparent;
@@ -76,7 +75,7 @@
     background: url('https://exudev.ca/BeX/Twitchbadges/mod.png') no-repeat;
     padding-left: 21px;
     padding-top: 7.5px;
-    background-size: 23px 23px;
+    background-size: 18px 18px;
     font-size: 15px;
     background-position: 0px 8px;
     border-left: 3px solid transparent;
@@ -88,7 +87,7 @@
     background: url('https://exudev.ca/BeX/Twitchbadges/pro.png') no-repeat;
     padding-left: 21px;
     padding-top: 7.5px;
-    background-size: 23px 23px;
+    background-size: 18px 18px;
     font-size: 15px;
     background-position: 0px 8px;
     border-left: 3px solid transparent;
@@ -154,6 +153,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="BExTSSN"] .message-author {
     background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
     padding-left: 22px;
