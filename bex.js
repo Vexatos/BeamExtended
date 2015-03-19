@@ -265,11 +265,11 @@ BeamExtended = function() {
             if (channel == 'exuviax') {
                 $messages.prepend(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
+                            .addClass('message-body')
+                            .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
                     )
                 );
             } else {
@@ -286,8 +286,8 @@ BeamExtended = function() {
 
                 $messages.prepend(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
@@ -296,11 +296,11 @@ BeamExtended = function() {
         } else {
             $messages.prepend(
                 $('<div>')
-                .addClass('message')
-                .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                    .addClass('message-body')
-                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                        .addClass('message-body')
+                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
@@ -414,27 +414,27 @@ BeamExtended = function() {
                 }
             }
         }
+        
+        return string;
     }
 
     function handleCommands(ele) {
         var msgAuthor = ele.find('.message-author').text();
         var msgText = ele.find('.message-body').html();
         var msgSplit = msgText.split(" ");
-        if (msgSplit.length > 1) {
-            switch (msgSplit[0]) {
-                case ":me":
-                    ele.find('.message-body').text("*" + argsToString(msgSplit) + "*");
-                    break;
-                case ":version":
-                    ele.find('.message-body').text("BEx :: Beam Extended Version " + VERSION + "!");
-                    break;
-                case ":link":
-                    ele.find('.message-body').text("BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended ");
-                    break;
-                case ":nolink":
-                    ele.find('.message-body').text("BEx :: You can grab Beam Extended from github.com/ExuDev/BeamExtended ");
-                    break;
-            }
+        switch (msgSplit[0]) {
+            case ":me":
+                if (msgSplit.length > 1) ele.find('.message-body').text("*" + argsToString(msgSplit) + "*");
+                break;
+            case ":version":
+                ele.find('.message-body').text("BEx :: Beam Extended Version " + VERSION + "!");
+                break;
+            case ":link":
+                ele.find('.message-body').text("BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended ");
+                break;
+            case ":nolink":
+                ele.find('.message-body').text("BEx :: You can grab Beam Extended from github.com/ExuDev/BeamExtended ");
+                break;
         }
     }
 
@@ -508,11 +508,11 @@ BeamExtended = function() {
                 if (triggeredAlerts.indexOf(systemAlert[i]) > -1) continue;
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
+                            .addClass('message-body')
+                            .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
                     ));
                 triggeredAlerts.push(systemAlert[i]);
             }
