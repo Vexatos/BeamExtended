@@ -403,18 +403,18 @@ BeamExtended = function() {
             if (args.length > 1) {
                 var iteration = 0,
                     delim = "";
-                for (var arg in args) {
+                for (var x = 0; x < args.length; x++) {
                     if (iteration == 0) {
                         iteration = 1;
                         continue;
                     }
 
-                    string += delim + arg;
+                    string += delim + args[x];
                     delim = " ";
                 }
             }
         }
-        
+
         return string;
     }
 
