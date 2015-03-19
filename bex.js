@@ -475,6 +475,10 @@ BeamExtended = function() {
 
     $("chat-options").on("click", "li[data-apage]", function() {
         var num = $(this).data("apage");
+
+        $(this).addClass("active");
+        $(this).parent().find("li").removeClass("active");
+
         var section = $(this).parent().parent().parent();
         section.find(".chat-dialog-menu-page").hide(); // Hide all pages (incase we add more in future?)
         section.find('.chat-dialog-menu-page[bpage="' + num + '"]').show(); // Show selected page
