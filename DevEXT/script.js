@@ -30,4 +30,4 @@ setInterval(function() {
 		$("head")[0].appendChild(i);
 		$(i).remove();
 	}
-}, 2000);
+}, 3000);
