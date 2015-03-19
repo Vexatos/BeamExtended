@@ -440,11 +440,11 @@ BeamExtended = function() {
         if (parent != null)
         {
             var nav = parent.find(".chat-dialog-menu ul"); // Find the navigation
-            nav.find("li").attr("data-apage", "0"); // Give a data value to the current nav element
+            nav.find("li").data("apage", "0"); // Give a data value to the current nav element
             nav.append('<li class="" data-apage="1"><a href="#">Bex Settings</a></li>'); // Add our own navigation element
 
             var page = parent.find(".chat-dialog-menu-page");
-            page.attr("data-bpage", "0");
+            page.data("bpage", "0");
 
             // Let's create our page syntax.
             // Give it a page data of 1, and hide it.
@@ -476,12 +476,12 @@ BeamExtended = function() {
     $("chat-options").on("click", "li[data-apage]", function() {
         var num = $(this).data("apage");
 
-        $(this).parent().find("li").removeClass("active");
         $(this).addClass("active");
+        $(this).parent().find("li").removeClass("active");
 
         var section = $(this).parent().parent().parent();
         section.find(".chat-dialog-menu-page").hide(); // Hide all pages (incase we add more in future?)
-        section.find('.chat-dialog-menu-page[data-bpage="' + num + '"]').show(); // Show selected page
+        section.find('.chat-dialog-menu-page[bpage="' + num + '"]').show(); // Show selected page
     });
 
     function onChatReceived(event) {
