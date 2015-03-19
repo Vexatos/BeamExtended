@@ -423,16 +423,16 @@ BeamExtended = function() {
         if (msgSplit.length > 1) {
             switch (msgSplit[0]) {
                 case ":me":
-                    $this.find('.message-body').text("*" + argsToString(msgSplit) + "*");
+                    ele.find('.message-body').text("*" + argsToString(msgSplit) + "*");
                     break;
                 case ":version":
-                    $this.find('.message-body').text("BEx :: Beam Extended Version " + VERSION + "!");
+                    ele.find('.message-body').text("BEx :: Beam Extended Version " + VERSION + "!");
                     break;
                 case ":link":
-                    $this.find('.message-body').text("BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended ");
+                    ele.find('.message-body').text("BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended ");
                     break;
                 case ":nolink":
-                    $this.find('.message-body').text("BEx :: You can grab Beam Extended from github.com/ExuDev/BeamExtended ");
+                    ele.find('.message-body').text("BEx :: You can grab Beam Extended from github.com/ExuDev/BeamExtended ");
                     break;
             }
         }
