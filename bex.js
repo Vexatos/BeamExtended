@@ -434,56 +434,6 @@ BeamExtended = function() {
         }
     });
 
-    function createSettingsPage() {
-        var opts = $("chat-options"); // Get the div
-        var parent = opts.find("div section"); // Find the section
-        if (parent != null)
-        {
-            var nav = parent.find(".chat-dialog-menu ul"); // Find the navigation
-            nav.find("li").data("apage", "0"); // Give a data value to the current nav element
-            nav.append('<li class="" data-apage="1"><a href="#">Bex Settings</a></li>'); // Add our own navigation element
-
-            var page = parent.find(".chat-dialog-menu-page");
-            page.data("bpage", "0");
-
-            // Let's create our page syntax.
-            // Give it a page data of 1, and hide it.
-            var ourPage =   '<div class="chat-dialog-menu-page ng-scope" data-bpage="1" style="display: none;">' +
-                            '<table class="table">' +
-                                '<tbody>' +
-                                    '<tr>' +
-                                        '<td class="col-xs-6"><label>Coming Soon...</label></td>' +
-                                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="soon" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                                    '</tr>' +
-                                '</tbody>' +
-                            '</table>' +
-                            '</div>';
-
-            page.after(ourPage); // Add our page after the current page.
-        }
-    }
-
-    // Selector is a bit annoying, but I can't see a better more reliable one to use.
-    $(".message-actions .icon-equalizer").click(function() {
-        createSettingsPage();
-    });
-
-    $("chat-options").on("click", "input[data-bex]", function() {
-        // TEMPORARY FOR TESTING PURPOSES
-        console.log("Toggle State of: " + $(this).data("bex"));
-    });
-
-    $("chat-options").on("click", "li[data-apage]", function() {
-        var num = $(this).data("apage");
-
-        $(this).addClass("active");
-        $(this).parent().find("li").removeClass("active");
-
-        var section = $(this).parent().parent().parent();
-        section.find(".chat-dialog-menu-page").hide(); // Hide all pages (incase we add more in future?)
-        section.find('.chat-dialog-menu-page[bpage="' + num + '"]').show(); // Show selected page
-    });
-
     function onChatReceived(event) {
         var $this = $(event.target);
         var messageAuthor = $this.find('.message-author').text().toLowerCase();
