@@ -69,16 +69,16 @@ BeamExtended = function() {
     setInterval(function() {
         if (bexoptions.bexbadges == true && styleChannel != 'bexBadgesStyle') {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random);
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
         } else if (bexoptions.bexbadges == false && styleChannel == 'bexBadgesStyle') {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random);
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
         } else if (bexoptions.twitchbadges == true && styleChannel != 'bexTwitchBadgesStyle') {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random);
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
         } else if (bexoptions.twitchbadges == false && styleChannel == 'bexTwitchBadgesStyle') {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random);
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
         }
 
     }, 1000);
@@ -186,7 +186,7 @@ BeamExtended = function() {
     });
 
     //region Roles
-    $.getJSON('https://exudev.ca/BeX/config.json?' + Math.random, function(data) {
+    $.getJSON('https://exudev.ca/BeX/config.json?' + Math.random(), function(data) {
         roles = data;
     });
     //endregion
@@ -206,7 +206,7 @@ BeamExtended = function() {
     //endregion
 
     //region Emotes
-    $.getJSON('https://exudev.ca/BeX/emotes/_index.json?' + Math.random,
+    $.getJSON('https://exudev.ca/BeX/emotes/_index.json?' + Math.random(),
         /**
          * @param {{template: String, emotes: Object}} data
          */
@@ -291,7 +291,7 @@ BeamExtended = function() {
         }
     }
 
-    $.getJSON('https://exudev.ca/BeX/emotes/' + channel + '/_index.json?' + Math.random)
+    $.getJSON('https://exudev.ca/BeX/emotes/' + channel + '/_index.json?' + Math.random())
         .done(function(emotes) {
             onCustomChannelEmotesLoaded(emotes);
         })
@@ -300,7 +300,7 @@ BeamExtended = function() {
         });
     //endregion
     //endregion
-    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css? ' + Math.random + '">');
+    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css? ' + Math.random() + '">');
     $('head').append($cssLink);
 
     if (channel == 'ifstudios') {
