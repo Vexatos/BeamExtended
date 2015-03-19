@@ -8,6 +8,7 @@ if (typeof BeamExtendedInstance != 'undefined') {
 
 BeamExtended = function() {
     var VERSION = '1.0.3';
+    var COMMAND = ':'; // What is before a command?
 
     var twitchEmoteTemplate = '';
     var twitchEmotes = [];
@@ -250,11 +251,11 @@ BeamExtended = function() {
             if (channel == 'exuviax') {
                 $messages.prepend(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
+                            .addClass('message-body')
+                            .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
                     )
                 );
             } else {
@@ -271,8 +272,8 @@ BeamExtended = function() {
 
                 $messages.prepend(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
@@ -281,11 +282,11 @@ BeamExtended = function() {
         } else {
             $messages.prepend(
                 $('<div>')
-                .addClass('message')
-                .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                    .addClass('message-body')
-                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                        .addClass('message-body')
+                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
@@ -407,25 +408,31 @@ BeamExtended = function() {
         return string;
     }
 
-    function handleCommands(ele) {
-        var msgAuthor = ele.find('.message-author').text();
-        var msgText = ele.find('.message-body').html();
-        var msgSplit = msgText.split(" ");
-        switch (msgSplit[0]) {
-            case ":me":
-                if (msgSplit.length > 1) ele.find('.message-body').text("*" + argsToString(msgSplit) + "*");
-                break;
-            case ":version":
-                ele.find('.message-body').text("BEx :: Beam Extended Version " + VERSION + "!");
-                break;
-            case ":link":
-                ele.find('.message-body').text("BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended ");
-                break;
-            case ":nolink":
-                ele.find('.message-body').text("BEx :: You can grab Beam Extended from github.com/ExuDev/BeamExtended ");
-                break;
+    $('textarea[ng-model="message.content"]').on("keyup", function(e) {
+        var code = e.keyCode || e.which;
+        if (code == '9') // 9 = TAB
+        {
+            var string = $(this).val();
+            var msgSplit = string.split(" ");
+            for (var x = 0; x < msgSplit.length; x++) { // Loop through words, to support commands mid-sentence.
+                if (msgSplit[x].charAt(0) == COMMAND) { // Check first letter is command
+                    switch(msgSplit[x].substring(1)) { // Remove the command executor
+                        case "me":
+                            if(x != 0) break; // The command "ME" only works if it's first. Due to it's arguments.
+                            if(msgSplit.length <= 1) break; // No parameters are here, so... don't do it!
+                            $(this).val("*" + argsToString(msgSplit) + "*"); // Completely override textarea with new structure.
+                            break;
+                        case "version":
+                            $(this).val($(this).val().replace(COMMAND + "version", "BEx :: Beam Extended Version " + VERSION + "!")); // Just replace the command.
+                            break;
+                        case "link":
+                            $(this).val($(this).val().replace(COMMAND + "link", "BEx :: You can grab Beam Extended from https://github.com/ExuDev/BeamExtended "));
+                            break;
+                    }
+                }
+            }
         }
-    }
+    });
 
     function onChatReceived(event) {
         var $this = $(event.target);
@@ -466,7 +473,6 @@ BeamExtended = function() {
             }
         }
 
-        handleCommands($this);
         overrideMessageBody($this.find('.message-body'));
 
         if (messageAuthor == username) {
@@ -497,11 +503,11 @@ BeamExtended = function() {
                 if (triggeredAlerts.indexOf(systemAlert[i]) > -1) continue;
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
+                            .addClass('message-body')
+                            .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
                     ));
                 triggeredAlerts.push(systemAlert[i]);
             }
