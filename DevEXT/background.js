@@ -1,5 +1,5 @@
 chrome.storage.sync.get("options", function(items) {
-	if(Object.keys(items).length != 5) {
+	if(Object.keys(items.options).length != 5) {
 		chrome.storage.sync.set({options: {twitchemotes: true, linkimages: false, usercolors: true, twitchbadges: false, bexbadges: false}});
 	}
 });
