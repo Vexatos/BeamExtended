@@ -29,6 +29,30 @@
     border-right: 3px solid transparent;
 }
 
+.chat-panel .message[data-role=Developer] {
+    color: #ecbf37!important;
+    background: url('https://beam.pro/img/raccoon.png') no-repeat;
+    padding-left: 11px;
+    padding-top: 7.5px;
+    background-size: 18px 18px;
+    font-size: 15px;
+    background-position: 0px 8px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.chat-panel .message[data-role=Developer] .message-author {
+    color: #ecbf37;
+    background: none!important;
+    background-size: none!important;
+    padding-left: 11px;
+    background-position-x: none!important;
+    padding-right: none!important;
+    margin-right: none!important;
+}
+
+
+
 .chat-panel .message[data-role~="Owner"] {
     color: #FFFFFF;
     background: url('https://exudev.ca/BeX/BexBadges/broad.png') no-repeat;
@@ -131,10 +155,12 @@
 
 .chat-panel .message[data-role~="BExBot"] .message-author {
     background: url('https://i.imgur.com/ddVOAAS.png') no-repeat;
+    color: #FF0000 !important;
     padding-left: 22px;
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 
 .chat-panel .message[data-role~="BExTSSN"] .message-author {
     background: url('https://exudev.ca/BeX/tssn.png') no-repeat;

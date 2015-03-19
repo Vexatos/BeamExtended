@@ -81,13 +81,7 @@
 
 .chat-panel .message[data-role~="BExBot"] .message-author {
     background: url('https://i.imgur.com/ddVOAAS.png') no-repeat;
-    padding-left: 22px;
-    padding-bottom: 1px;
-    background-position: -1px;
-}
-
-.chat-panel .message[data-role~="BExTSSN"] .message-author {
-    background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
+    color: #FF0000 !important;
     padding-left: 22px;
     padding-bottom: 1px;
     background-position: -1px;
