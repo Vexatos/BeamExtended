@@ -48,7 +48,9 @@
         "exudev",
         "scottybot",
         "derpabot",
-        "bexbot"
+        "bexbot",
+        "bexdevbot",
+        "giveawaybot"
     ],
     "BExIFStaff": [
         "exuviax",
