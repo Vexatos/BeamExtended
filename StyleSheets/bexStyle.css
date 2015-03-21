@@ -33,6 +33,13 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+.chat-panel .message[data-role~="BExPlayerDotMe"] .message-author {
+    color: #f08;
+    background: url('https://exudev.ca/BeX/icons/player-logo.png') no-repeat;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
+}
 
 .chat-panel .message[data-role~="BExMusicVerified"] .message-author {
     color: #9800FF;
