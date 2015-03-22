@@ -490,6 +490,10 @@ BeamExtended = function() {
                         '<td class="col-xs-6"><label>Chat Images</label></td>' +
                         '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="linkimages" class="ng-pristine ng-untouched ng-valid"></label></td>' +
                     '</tr>' +
+                    '<tr>' +
+                        '<td class="col-xs-6"><label>SplitChat</label></td>' +
+                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="splitchat" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                    '</tr>' +
                 '</tbody>' +
                 '</table>' +
                 '</div>';
