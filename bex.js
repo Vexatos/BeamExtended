@@ -54,35 +54,46 @@ BeamExtended = function() {
     var channel = pathname.toLowerCase().replace("/", "");
 
     function GetStylesheet() {
-        if (bexoptions.bexbadges == true) {
-            return 'bexBadgesStyle'
+        if (bexoptions.bexbadges === true) {
+            return 'bexBadgesStyle';
 
-        } else if (bexoptions.twitchbadges == true) {
-            return 'bexTwitchBadgesStyle'
+        } else if (bexoptions.twitchbadges === true) {
+            return 'bexTwitchBadgesStyle';
 
         } else {
-            return 'bexStyle'
+            return 'bexStyle';
 
         }
     }
     styleChannel = GetStylesheet();
 
     setInterval(function() {
-        if (bexoptions.bexbadges == true && styleChannel != 'bexBadgesStyle') {
+        if (bexoptions.bexbadges === true && styleChannel != 'bexBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
-        } else if (bexoptions.bexbadges == false && styleChannel == 'bexBadgesStyle') {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.bexbadges === false && styleChannel == 'bexBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
-        } else if (bexoptions.twitchbadges == true && styleChannel != 'bexTwitchBadgesStyle') {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.twitchbadges === true && styleChannel != 'bexTwitchBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
-        } else if (bexoptions.twitchbadges == false && styleChannel == 'bexTwitchBadgesStyle') {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.twitchbadges === false && styleChannel == 'bexTwitchBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?' + Math.random());
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
         }
 
     }, 1000);
+
+    setInterval(function() {
+        if (bexoptions.splitchat === true && (!$("link[href='https://exudev.ca/BeX/StyleSheets/splitchat.css']").length)) {
+            $('head').append('<link rel="stylesheet" href="https://exudev.ca/BeX/StyleSheets/splitchat.css" type="text/css" />');
+        } else if (bexoptions.splitchat === false && ($("link[href='https://exudev.ca/BeX/StyleSheets/splitchat.css']").length)) {
+            $('link[rel=stylesheet][href~="https://exudev.ca/BeX/StyleSheets/splitchat.css"]').remove();
+        }
+
+    }, 1000);
+
+
 
     var username = '';
 
@@ -181,7 +192,7 @@ BeamExtended = function() {
 
     //region Loading data
     $.getJSON('https://beam.pro/api/v1/users/current', function(data) {
-        if (data.username != null) {
+        if (data.username !== null) {
             username = data.username.toLowerCase();
         }
     });
@@ -245,17 +256,17 @@ BeamExtended = function() {
 
     //region Channel Emotes
     function onCustomChannelEmotesLoaded(emotes) {
-        if (emotes != null) {
+        if (emotes !== null) {
             customChannelEmotes = emotes;
 
             if (channel == 'exuviax') {
                 $messages.prepend(
                     $('<div>')
-                        .addClass('message')
-                        .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                            .addClass('message-body')
-                            .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
+                        .addClass('message-body')
+                        .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
                     )
                 );
             } else {
@@ -272,8 +283,8 @@ BeamExtended = function() {
 
                 $messages.prepend(
                     $('<div>')
-                        .addClass('message')
-                        .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
@@ -282,11 +293,11 @@ BeamExtended = function() {
         } else {
             $messages.prepend(
                 $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                .addClass('message')
+                .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                        .addClass('message-body')
-                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                    .addClass('message-body')
+                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
         }
@@ -301,22 +312,15 @@ BeamExtended = function() {
         });
     //endregion
     //endregion
-    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css? ' + Math.random() + '">');
+    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?">');
     $('head').append($cssLink);
 
-    if (channel == 'ifstudios') {
-        var $cssLinkCustom = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/IFstyle.css">');
-        $('head').append($cssLinkCustom);
-    } else if (tssnCrew.indexOf(channel) > -1) {
-        var $cssLinkCustom = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/tssnStyle.css">');
-        $('head').append($cssLinkCustom);
-    }
 
     function overrideMessageBody($messageBody) {
         var messageRole = $messageBody.parent().attr('data-role');
 
         // Replace image links with images
-        if (bexoptions.linkimages == true) {
+        if (bexoptions.linkimages === true) {
             $messageBody.find('a').each(function() {
                 if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
                     var original = $('<div>').append($(this).clone()).html();
@@ -335,7 +339,7 @@ BeamExtended = function() {
                         target: '_blank',
                         href: this.href
                     })).append($('<div>').addClass('remove btn').text('Remove(Double-Click)').click(function() {
-                        $imgContainer.replaceWith($('<div>').append(original))
+                        $imgContainer.replaceWith($('<div>').append(original));
                     }));
 
                 }
@@ -347,7 +351,7 @@ BeamExtended = function() {
         var emote, temp;
 
         // Replace Twitch Emotes (Global)
-        if (bexoptions.twitchemotes == true) {
+        if (bexoptions.twitchemotes === true) {
             for (var i in twitchEmotes) {
                 if (!twitchEmotes.hasOwnProperty(i)) continue;
                 emote = twitchEmotes[i];
@@ -394,7 +398,7 @@ BeamExtended = function() {
                 var iteration = 0,
                     delim = "";
                 for (var x = 0; x < args.length; x++) {
-                    if (iteration == 0) {
+                    if (iteration === 0) {
                         iteration = 1;
                         continue;
                     }
@@ -416,10 +420,10 @@ BeamExtended = function() {
             var msgSplit = string.split(" ");
             for (var x = 0; x < msgSplit.length; x++) { // Loop through words, to support commands mid-sentence.
                 if (msgSplit[x].charAt(0) == COMMAND) { // Check first letter is command
-                    switch(msgSplit[x].substring(1)) { // Remove the command executor
+                    switch (msgSplit[x].substring(1)) { // Remove the command executor
                         case "me":
-                            if(x != 0) break; // The command "ME" only works if it's first. Due to it's arguments.
-                            if(msgSplit.length <= 1) break; // No parameters are here, so... don't do it!
+                            if (x !== 0) break; // The command "ME" only works if it's first. Due to it's arguments.
+                            if (msgSplit.length <= 1) break; // No parameters are here, so... don't do it!
                             $(this).val("*" + argsToString(msgSplit) + "*"); // Completely override textarea with new structure.
                             break;
                         case "version":
@@ -437,8 +441,7 @@ BeamExtended = function() {
     function createSettingsPage() {
         var opts = $("chat-options"); // Get the div
         var parent = opts.find("div section"); // Find the section
-        if (parent != null)
-        {
+        if (parent !== null) {
             // Add the navigation element for our page
             var nav = parent.find(".chat-dialog-menu ul");
             nav.find("li").attr("data-apage", "0"); // Add them to my logic
@@ -466,34 +469,34 @@ BeamExtended = function() {
 
         // If our page doesn't exist, then re-add it.
         // We do this because the Beam system resets the syntax when their pages change.
-        if ($(".chat-dialog-menu-page.bexobj").length == 0) {
+        if ($(".chat-dialog-menu-page.bexobj").length === 0) {
             var ourPage = '<div class="chat-dialog-menu-page ng-scope bexobj" data-bpage="Bex">' +
                 '<table class="table">' +
                 '<tbody>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>Twitch Emotes</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="twitchemotes" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>Username Colors</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="usercolors" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>Use BEx Badges</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="bexbadges" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>Use Twitch Badges</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="twitchbadges" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>Chat Images</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="linkimages" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
-                    '<tr>' +
-                        '<td class="col-xs-6"><label>SplitChat</label></td>' +
-                        '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="splitchat" class="ng-pristine ng-untouched ng-valid"></label></td>' +
-                    '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>Twitch Emotes</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="twitchemotes" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>Username Colors</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="usercolors" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>Use BEx Badges</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="bexbadges" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>Use Twitch Badges</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="twitchbadges" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>Chat Images</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="linkimages" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td class="col-xs-6"><label>SplitChat</label></td>' +
+                '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="splitchat" class="ng-pristine ng-untouched ng-valid"></label></td>' +
+                '</tr>' +
                 '</tbody>' +
                 '</table>' +
                 '</div>';
@@ -518,7 +521,7 @@ BeamExtended = function() {
         var messageAuthor = $this.find('.message-author').text().toLowerCase();
         var messageRole = $this.attr('data-role');
 
-        if (messageAuthor == null || messageRole == null) {
+        if (messageAuthor === null || messageRole === null) {
             return;
         }
 
@@ -534,15 +537,15 @@ BeamExtended = function() {
         $this.attr('data-role', messageRole);
 
         // User Colors
-        if (bexoptions.usercolors == true) {
-            if (colors[messageAuthor] != null) {
+        if (bexoptions.usercolors === true) {
+            if (colors[messageAuthor] !== null) {
                 $this.find('.message-author').css('color', colors[messageAuthor]);
-            } else if (secondColors[messageAuthor] != null) {
-                if (bexoptions.globalcolors == true) {
+            } else if (secondColors[messageAuthor] !== null) {
+                if (bexoptions.globalcolors === true) {
                     $this.find('.message-author').css('color', secondColors[messageAuthor]);
                 }
             } else {
-                if (bexoptions.globalcolors == true) {
+                if (bexoptions.globalcolors === true) {
                     var randomPicker = Math.floor(Math.random() * 16);
                     secondColors[messageAuthor] = colorWheel[randomPicker];
                     $this.find('.message-author').css('color', secondColors[messageAuthor]);
@@ -582,11 +585,11 @@ BeamExtended = function() {
                 if (triggeredAlerts.indexOf(systemAlert[i]) > -1) continue;
                 $messages.append(
                     $('<div>')
-                        .addClass('message')
-                        .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                            .addClass('message-body')
-                            .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
+                        .addClass('message-body')
+                        .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
                     ));
                 triggeredAlerts.push(systemAlert[i]);
             }
