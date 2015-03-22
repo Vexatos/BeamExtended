@@ -1,3 +1,8 @@
+# 03/22/2015
+* Added Chat Settings Tab
+* Added Split Chat
+* Minor Bug Fixes
+
 # 03/19/2015
 * Moved to an easier Stylesheet system
 * Fixed Chat Images not sticking
