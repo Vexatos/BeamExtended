@@ -112,6 +112,14 @@
     background-position: -1px;
 }
 
+.chat-panel .message[data-role~="BExFamilyStrong"] .message-author {
+    color: #f08;
+    background: url('https://exudev.ca/BeX/icons/fs-logo.png') no-repeat;
+    padding-left: 22px;
+    padding-bottom: 1px;
+    background-position: -1px;
+}
+
 .chat-panel .message[data-role~="ExuMessage"] {
     border-right: 3px solid #0003FF;
     border-left: 3px solid #0003FF;
