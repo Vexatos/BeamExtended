@@ -1,6 +1,6 @@
 [{
-	"emote": "spaceDu",
-	"image_id": 1
+    "emote": "spaceDu",
+    "image_id": 1
 }, {
     "emote": "spaceGG",
     "image_id": 2
@@ -11,12 +11,16 @@
     "emote": "spaceHype",
     "image_id": 3
 }, {
-	"emote": "KeepoF",
-	"image_id": 5,
-	"image_ext": "gif"
+    "emote": "KeepoF",
+    "image_id": 5,
+    "image_ext": "gif"
 }, {
-	"emote": "Fistbump",
-	"image_id": 1,
-	"image_ext": "gif",
+    "emote": "Fistbump",
+    "image_id": 1,
+    "image_ext": "gif",
     "image_pack": "thespaceguild"
+}, {
+    "emote": "SpinThump",
+    "image_id": 6,
+    "image_ext": "gif"
 }]
