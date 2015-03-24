@@ -1,0 +1,17 @@
+[{
+    "emote": "fireHeart",
+    "image_id": 1
+}, {
+    "emote": "fireWrench",
+    "image_id": 2
+}, {
+    "emote": "fireHat",
+    "image_id": 4
+}, {
+    "emote": "sfireBall",
+    "image_id": 3
+}, {
+    "emote": "fireME",
+    "image_id": 5,
+    "image_ext": "gif"
+}]

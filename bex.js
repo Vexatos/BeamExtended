@@ -293,7 +293,7 @@ BeamExtended = function() {
             customChannelEmotes = emotes;
 
             if (channel == 'exuviax') {
-                $messages.prepend(
+                $messages.append(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
@@ -314,7 +314,7 @@ BeamExtended = function() {
                     $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 }
 
-                $messages.prepend(
+                $messages.append(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
@@ -324,7 +324,7 @@ BeamExtended = function() {
 
             }
         } else {
-            $messages.prepend(
+            $messages.append(
                 $('<div>')
                 .addClass('message')
                 .attr('data-role', 'ExuMessage').append(
