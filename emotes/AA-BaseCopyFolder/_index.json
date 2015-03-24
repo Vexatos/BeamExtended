@@ -1,0 +1,12 @@
+[{
+	"emote": "EMOTE-ONE",
+	"image_id": 1
+}, {
+    "emote": "EMOTE-TWO-GIF",
+    "image_id": 2,
+    "image_ext": "gif"
+}, {
+    "emote": "EMOTE-THREE-PACK",
+    "image_id": 4,
+    "image_pack": "PACK-NAME"
+}]
