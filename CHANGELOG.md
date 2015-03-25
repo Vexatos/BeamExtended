@@ -1,3 +1,9 @@
+# 03/25/2015
+* Fixed loading of BEx without having to force refresh
+* Fixed Welcome banner
+* Minor Bug Fixes
+
+
 # 03/22/2015
 * Added Chat Settings Tab
 * Added Split Chat

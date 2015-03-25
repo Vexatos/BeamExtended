@@ -302,6 +302,7 @@ BeamExtended = function() {
                         .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
                     )
                 );
+                $(".nano").nanoScroller({ scroll: 'bottom' });
             } else {
 
                 var $message = $('<div>')
@@ -321,7 +322,7 @@ BeamExtended = function() {
                         $message
                     )
                 );
-
+                $(".nano").nanoScroller({ scroll: 'bottom' });
             }
         } else {
             $messages.append(
@@ -333,6 +334,7 @@ BeamExtended = function() {
                     .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
+            $(".nano").nanoScroller({ scroll: 'bottom' });
         }
     }
 
@@ -367,6 +369,7 @@ BeamExtended = function() {
                     $(this).replaceWith($imgContainer);
 
                     $imgContainer.append($('<img>').attr('src', this.href));
+                    
 
                     $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
                         target: '_blank',
@@ -374,7 +377,6 @@ BeamExtended = function() {
                     })).append($('<div>').addClass('remove btn').text('Remove(Double-Click)').click(function() {
                         $imgContainer.replaceWith($('<div>').append(original));
                     }));
-
                 }
             });
         }

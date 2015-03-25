@@ -1,16 +1,26 @@
+var loaddmt = false;
+var adder = Math.random();
 function beam_init()
 {
-	script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.src = "https://mradder.com/cdn/bex.js?"+Math.random();
-	thehead = document.getElementsByTagName('head')[0];
-	if(thehead) thehead.appendChild(script);
-	scripts = document.createElement('script');
-	scripts.type = 'text/javascript';
-	scripts.src = "https://mradder.com/cdn/background.js?"+Math.random();
-	theheads = document.getElementsByTagName('head')[0];
-	if(theheads) thehead.appendChild(script);
-
+	if (!loaddmt && $(".messages")[0]){
+		loaddmt = true;
+			script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = "https://exudev.ca/BeX/bex.js?"+adder;
+			thehead = document.getElementsByTagName('head')[0];
+			if(thehead) thehead.appendChild(script);
+			scripts = document.createElement('script');
+			scripts.type = 'text/javascript';
+			scripts.src = "https://exudev.ca/BeX/background.js?"+adder;
+			theheads = document.getElementsByTagName('head')[0];
+			if(theheads) thehead.appendChild(script);
+		}else if(loaddmt && !$(".messages")[0]) {
+			loaddmt = false;
+        	var i = document.createElement("script");
+        	$(i).text("BeamExtendedInstance.close();");
+        	$("head")[0].appendChild(i);
+        	$(i).remove();
+        }
 }
 chrome.runtime.sendMessage("showicon");
 var loadedmt = false;
@@ -51,4 +61,6 @@ $("document").ready(function() {
 	});
 });
 
-beam_init();
+setInterval(function() {
+		beam_init();
+}, 2000);
