@@ -1,4 +1,7 @@
 [{
-	"emote": "ChiHeart",
+	"emote": "chiHeart",
 	"image_id": 1
+},{
+	"emote": "chiPrint",
+	"image_id": 2
 }]

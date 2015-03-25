@@ -1,0 +1,25 @@
+[{
+    "emote": "graphcoffee",
+    "image_id": 1
+}, {
+    "emote": "nothingtodo",
+    "image_id": 2,
+    "image_ext": "jpg"
+}, {
+    "emote": "graphallthethings",
+    "image_id": 3,
+    "image_ext": "jpg"
+}, {
+    "emote": "ohjoy",
+    "image_id": 4
+}, {
+    "emote": "gtfo",
+    "image_id": 5
+}, {
+    "emote": "graphdance",
+    "image_id": 6,
+    "image_ext": "gif"
+}, {
+    "emote": "tophat",
+    "image_id": 7
+}]
