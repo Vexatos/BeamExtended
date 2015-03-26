@@ -9,11 +9,11 @@ function beam_init()
 			script.src = "https://exudev.ca/BeX/bex.js?"+adder;
 			thehead = document.getElementsByTagName('head')[0];
 			if(thehead) thehead.appendChild(script);
-			scripts = document.createElement('script');
-			scripts.type = 'text/javascript';
-			scripts.src = "https://exudev.ca/BeX/background.js?"+adder;
-			theheads = document.getElementsByTagName('head')[0];
-			if(theheads) thehead.appendChild(scripts);
+			//scripts = document.createElement('script');
+			//scripts.type = 'text/javascript';
+			//scripts.src = "https://exudev.ca/BeX/background.js?"+adder;
+			//theheads = document.getElementsByTagName('head')[0];
+			//if(theheads) thehead.appendChild(scripts);
 			scriptz = document.createElement('script');
 			scriptz.type = 'text/javascript';
 			scriptz.src = "LINKTOSOME.js?"+adder;
