@@ -449,18 +449,13 @@ BeamExtended = function() {
 
     $('textarea[ng-model="message.content"]').on("keyup", function(e) {
         var code = e.keyCode || e.which;
-        if (code == '9') // 9 = TAB
+        if (code == '32') // 9 = TAB
         {
             var string = $(this).val();
             var msgSplit = string.split(" ");
             for (var x = 0; x < msgSplit.length; x++) { // Loop through words, to support commands mid-sentence.
                 if (msgSplit[x].charAt(0) == COMMAND) { // Check first letter is command
                     switch (msgSplit[x].substring(1)) { // Remove the command executor
-                        case "me":
-                            if (x !== 0) break; // The command "ME" only works if it's first. Due to it's arguments.
-                            if (msgSplit.length <= 1) break; // No parameters are here, so... don't do it!
-                            $(this).val("*" + argsToString(msgSplit) + "*"); // Completely override textarea with new structure.
-                            break;
                         case "version":
                             $(this).val($(this).val().replace(COMMAND + "version", "BEx :: Beam Extended Version " + VERSION + "!")); // Just replace the command.
                             break;
