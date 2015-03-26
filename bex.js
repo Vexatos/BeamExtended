@@ -40,7 +40,7 @@ if (typeof BeamExtendedInstance != 'undefined') {
 }
 
 BeamExtended = function() {
-    var VERSION = '1.1.0';
+    var VERSION = '1.1.1';
     var COMMAND = ':'; // What is before a command?
 
     var twitchEmoteTemplate = '';
