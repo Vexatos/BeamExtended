@@ -97,42 +97,40 @@ BeamExtended = function() {
 
         }
     }
+
     styleChannel = GetStylesheet();
 
     $('head').append('<link rel="stylesheet" href="https://exudev.ca/BeX/Dependencies/qtip.css" type="text/css" />');
 
     setInterval(function() {
-        if (bexoptions.bexbadges === true && styleChannel != 'bexBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
+        var bexBadgesLoaded = $("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length > 0;
+        var twitchBadgesLoaded = $("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length > 0;
+        if (bexoptions.bexbadges === true && styleChannel != 'bexBadgesStyle' && !bexBadgesLoaded) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
-        } else if (bexoptions.bexbadges === false && styleChannel == 'bexBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
+        } else if (bexoptions.bexbadges === false && styleChannel == 'bexBadgesStyle' && bexBadgesLoaded) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
-        } else if (bexoptions.twitchbadges === true && styleChannel != 'bexTwitchBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
+        } else if (bexoptions.twitchbadges === true && styleChannel != 'bexTwitchBadgesStyle' && !twitchBadgesLoaded) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
-        } else if (bexoptions.twitchbadges === false && styleChannel == 'bexTwitchBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
+        } else if (bexoptions.twitchbadges === false && styleChannel == 'bexTwitchBadgesStyle' && twitchBadgesLoaded) {
             styleChannel = GetStylesheet();
             $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
         }
-
     }, 1000);
 
     setInterval(function() {
-        if (bexoptions.splitchat === true && (!$("link[href='https://exudev.ca/BeX/StyleSheets/splitchat.css']").length)) {
+        var isSplitChatLoaded = $("link[href='https://exudev.ca/BeX/StyleSheets/splitchat.css']").length > 0;
+        if (bexoptions.splitchat === true && !isSplitChatLoaded) {
             $('head').append('<link rel="stylesheet" href="https://exudev.ca/BeX/StyleSheets/splitchat.css" type="text/css" />');
-        } else if (bexoptions.splitchat === false && ($("link[href='https://exudev.ca/BeX/StyleSheets/splitchat.css']").length)) {
+        } else if (bexoptions.splitchat === false && isSplitChatLoaded) {
             $('link[rel=stylesheet][href~="https://exudev.ca/BeX/StyleSheets/splitchat.css"]').remove();
         }
 
     }, 1000);
 
-
-
-
     var username = '';
-
-
 
     var Utils = {
         proxifyImage: function(url) {
@@ -282,13 +280,14 @@ BeamExtended = function() {
             if (channel == 'exuviax') {
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
+                            .addClass('message-body')
+                            .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href="http://beamalerts.com/bex/exuviax" target="_blank"> here</a>')
                     )
                 );
+
                 $(".nano").nanoScroller({
                     scroll: 'bottom'
                 });
@@ -306,11 +305,12 @@ BeamExtended = function() {
 
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
+
                 $(".nano").nanoScroller({
                     scroll: 'bottom'
                 });
@@ -318,13 +318,14 @@ BeamExtended = function() {
         } else {
             $messages.append(
                 $('<div>')
-                .addClass('message')
-                .attr('data-role', 'ExuMessage').append(
+                    .addClass('message')
+                    .attr('data-role', 'ExuMessage').append(
                     $('<div>')
-                    .addClass('message-body')
-                    .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
+                        .addClass('message-body')
+                        .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
+
             $(".nano").nanoScroller({
                 scroll: 'bottom'
             });
@@ -343,78 +344,87 @@ BeamExtended = function() {
     var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?">');
     $('head').append($cssLink);
 
-
     function overrideMessageBody($messageBody) {
-        var messageRole = $messageBody.parent().attr('data-role');
+        if ($messageBody.data('overridden') == null) {
+            // Replace image links with images
+            if (bexoptions.linkimages === true) {
+                $messageBody.find('a').each(function() {
+                    if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
+                        var original = $('<div>').append($(this).clone()).html();
 
-        // Replace image links with images
-        if (bexoptions.linkimages === true) {
-            $messageBody.find('a').each(function() {
-                if (Utils.endsWithIgnoreCase(Utils.getBaseURL(this.href), ['.gif', '.jpg', '.jpeg', '.png', '.rif', '.tiff', '.bmp'])) {
-                    var original = $('<div>').append($(this).clone()).html();
+                        var $imgContainer = $('<div>').addClass('imgContainer');
 
-                    var $imgContainer = $('<div>').addClass('imgContainer').mouseover(function() {
-                        $(this).find('.delete').show();
-                    }).mouseout(function() {
-                        $(this).find('.delete').hide();
-                    });
+                        $(this).replaceWith($imgContainer);
 
-                    $(this).replaceWith($imgContainer);
+                        $imgContainer.append($('<img>').attr('src', Utils.proxifyImage(this.href)));
 
-                    $imgContainer.append($('<img>').attr('src', this.href));
+                        $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
+                            target: '_blank',
+                            href: this.href
+                        })).append($('<div>').addClass('remove btn').text('Remove').click(function() {
+                            $(this).text('Are you sure?').off('click').click(function() {
+                                $imgContainer.replaceWith($('<div>').append(original));
+                            });
+                        }));
+                    }
+                });
+            }
 
+            var messageBody = ' ' + $messageBody.html() + ' ';
+            var oldMessageBody = messageBody;
+            var emote, temp, hasEmotes = false;
 
-                    $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
-                        target: '_blank',
-                        href: this.href
-                    })).append($('<div>').addClass('remove btn').text('Remove(Double-Click)').click(function() {
-                        $imgContainer.replaceWith($('<div>').append(original));
-                    }));
+            // Replace Twitch Emotes (Global)
+            if (bexoptions.twitchemotes === true) {
+                for (var i in twitchEmotes) {
+                    if (!twitchEmotes.hasOwnProperty(i)) continue;
+                    emote = twitchEmotes[i];
+                    if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
+                        hasEmotes = true;
+                        temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
+                        messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
+                        messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
+                    }
                 }
-            });
-        }
+            }
 
-        var messageBody = ' ' + $messageBody.html() + ' ';
-        var oldMessageBody = messageBody;
-        var emote, temp;
-
-        // Replace Twitch Emotes (Global)
-        if (bexoptions.twitchemotes === true) {
-            for (var i in twitchEmotes) {
-                if (!twitchEmotes.hasOwnProperty(i)) continue;
-                emote = twitchEmotes[i];
+            // Replace Custom Emotes (Global)
+            for (i in customEmotes) {
+                if (!customEmotes.hasOwnProperty(i)) continue;
+                emote = customEmotes[i];
                 if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                    temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
+                    hasEmotes = true;
+                    temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.global.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                     messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                     messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
                 }
             }
-        }
 
-        // Replace Custom Emotes (Global)
-        for (i in customEmotes) {
-            if (!customEmotes.hasOwnProperty(i)) continue;
-            emote = customEmotes[i];
-            if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.global.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
-                messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
-                messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
+            // Replace Custom Emotes (Channel)
+            for (i in customChannelEmotes) {
+                if (!customChannelEmotes.hasOwnProperty(i)) continue;
+                emote = customChannelEmotes[i];
+                if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
+                    hasEmotes = true;
+                    temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                    messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
+                    messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
+                }
             }
-        }
 
-        // Replace Custom Emotes (Channel)
-        for (i in customChannelEmotes) {
-            if (!customChannelEmotes.hasOwnProperty(i)) continue;
-            emote = customChannelEmotes[i];
-            if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
-                messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
-                messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
+            if (oldMessageBody != messageBody) {
+                $messageBody.html(messageBody.substr(1, messageBody.length - 1));
+
+                if (hasEmotes) {
+                    $messageBody.find('[bex-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+                        content: {
+                            attr: 'bex-tooltip' // Tell qTip2 to look inside this attr for its content
+                        }
+                    });
+                }
             }
-        }
 
-        if (oldMessageBody != messageBody) {
-            $messageBody.html(messageBody.substr(1, messageBody.length - 1));
+            $messageBody.data('overridden', true);
         }
     }
 
@@ -544,12 +554,6 @@ BeamExtended = function() {
         var messageAuthor = $this.find('.message-author').text().toLowerCase();
         var messageRole = $this.attr('data-role');
 
-        $('[bex-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
-            content: {
-                attr: 'bex-tooltip' // Tell qTip2 to look inside this attr for its content
-            }
-        })
-
         if (messageAuthor === null || messageRole === null) {
             return;
         }
@@ -592,14 +596,13 @@ BeamExtended = function() {
     }
 
 
-
-
     function onMessageOverridden(event) {
         var $this = $(event.target);
         if ($this.hasClass('message-body')) {
             setTimeout(function() {
                 $this.off('DOMSubtreeModified');
             }, 500);
+            $(event.target).data('overridden', null);
             overrideMessageBody($this);
         }
     }
@@ -617,11 +620,11 @@ BeamExtended = function() {
                 if (triggeredAlerts.indexOf(systemAlert[i]) > -1) continue;
                 $messages.append(
                     $('<div>')
-                    .addClass('message')
-                    .attr('data-role', 'ExuMessage').append(
+                        .addClass('message')
+                        .attr('data-role', 'ExuMessage').append(
                         $('<div>')
-                        .addClass('message-body')
-                        .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
+                            .addClass('message-body')
+                            .html('<b>Beam Extended Alert</b><br>' + systemAlert[i])
                     ));
                 triggeredAlerts.push(systemAlert[i]);
             }
@@ -648,6 +651,12 @@ BeamExtended = function() {
 (function() {
     function checker() {
         if (typeof jQuery !== 'undefined' && $('.messages').length > 0) {
+            if ($.fn.qtip == null) {
+                $.getScript('https://mradder.com/ss/jquery.qtip.min.js', function() {
+                    load();
+                });
+                return;
+            }
             load();
         } else {
             setTimeout(function() {
