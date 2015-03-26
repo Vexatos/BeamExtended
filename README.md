@@ -4,6 +4,9 @@ This repo is scheduled for massive changes :D
 * BEx on Google Chrome - http://goo.gl/Ewd2XN
 * BEx on FireFox Addons - No link available
 
+# Support
+* Help support BEx and get some awesome addons by joining our Patreon - https://www.patreon.com/ifdev
+
 
 # BeamExtended (BEx)
 Extend the unextended potential of Beam!
