@@ -13,7 +13,12 @@ function beam_init()
 			scripts.type = 'text/javascript';
 			scripts.src = "https://exudev.ca/BeX/background.js?"+adder;
 			theheads = document.getElementsByTagName('head')[0];
-			if(theheads) thehead.appendChild(script);
+			if(theheads) thehead.appendChild(scripts);
+			scriptz = document.createElement('script');
+			scriptz.type = 'text/javascript';
+			scriptz.src = "LINKTOSOME.js?"+adder;
+			theheads = document.getElementsByTagName('head')[0];
+			if(theheads) thehead.appendChild(scriptz);
 		}else if(loaddmt && !$(".messages")[0]) {
 			loaddmt = false;
         	var i = document.createElement("script");
