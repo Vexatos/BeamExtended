@@ -16,7 +16,7 @@ function beam_init()
 			if(theheads) thehead.appendChild(scripts);
 			scriptz = document.createElement('script');
 			scriptz.type = 'text/javascript';
-			scriptz.src = "//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.jss?"+adder;
+			scriptz.src = "LINKTOSOME.js?"+adder;
 			theheads = document.getElementsByTagName('head')[0];
 			if(theheads) thehead.appendChild(scriptz);
 		}else if(loaddmt && !$(".messages")[0]) {
