@@ -1,13 +1,45 @@
-// Created by ExuDev with love, feel free to share, edit, and even commit to our gitHub :)
-// also, open new issues for feature requests!
+/** @license
+ * Copyright (c) 2015 BExDevelopmentTeam
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without limitation of the rights to use, copy, modify, merge,
+ * and/or publish copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice, any copyright notices herein, and this permission
+ * notice shall be included in all copies or substantial portions of the Software,
+ * the Software, or portions of the Software, may not be sold for profit, and the
+ * Software may not be distributed nor sub-licensed without explicit permission
+ * from the copyright owner.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * Should any questions arise concerning your usage of this Software, or to
+ * request permission to distribute this Software, please contact the copyright
+ * holder at contact@exudev.ca or by creating an issue here - https://github.com/ExuDev/BeamExtended/issues
+ *
+ * ---------------------------------
+ *
+ *  Unofficial TLDR:
+ *  Free to modify for personal use
+ *  Need permission to distribute the code
+ *  Can't sell addon or features of the addon
 
+ */
 var BeamExtendedInstance;
 if (typeof BeamExtendedInstance != 'undefined') {
     BeamExtendedInstance.close();
 }
 
 BeamExtended = function() {
-    var VERSION = '1.1.0';
+    var VERSION = '1.1.1';
     var COMMAND = ':'; // What is before a command?
 
     var twitchEmoteTemplate = '';
@@ -67,19 +99,21 @@ BeamExtended = function() {
     }
     styleChannel = GetStylesheet();
 
+    $('head').append('<link rel="stylesheet" href="https://exudev.ca/BeX/Dependencies/qtip.css" type="text/css" />');
+
     setInterval(function() {
-        if (bexoptions.bexbadges === true && styleChannel != 'bexBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css']").length)) {
+        if (bexoptions.bexbadges === true && styleChannel != 'bexBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.bexbadges === false && styleChannel == 'bexBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css']").length)) {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.bexbadges === false && styleChannel == 'bexBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.twitchbadges === true && styleChannel != 'bexTwitchBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css']").length)) {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.twitchbadges === true && styleChannel != 'bexTwitchBadgesStyle' && (!$("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
-        } else if (bexoptions.twitchbadges === false && styleChannel == 'bexTwitchBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css']").length)) {
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
+        } else if (bexoptions.twitchbadges === false && styleChannel == 'bexTwitchBadgesStyle' && ($("link[href='https://exudev.ca/BeX/StyleSheets/bexTwitchBadgesStyle.css?']").length)) {
             styleChannel = GetStylesheet();
-            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css');
+            $cssLink.attr('href', 'https://exudev.ca/BeX/StyleSheets/' + styleChannel + '.css?');
         }
 
     }, 1000);
@@ -95,22 +129,8 @@ BeamExtended = function() {
 
 
 
+
     var username = '';
-
-    // Create the tooltips only when document ready
-    $(document).ready(function() {
-        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
-        $('.exu-emote').each(function() {
-            $(this).qtip({
-                content: {
-                    text: function(api) {
-                        return $($(this).attr('href'));
-                    }
-
-                }
-            });
-        });
-    });
 
 
 
@@ -260,7 +280,7 @@ BeamExtended = function() {
             customChannelEmotes = emotes;
 
             if (channel == 'exuviax') {
-                $messages.prepend(
+                $messages.append(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
@@ -269,6 +289,9 @@ BeamExtended = function() {
                         .html('Hey, I help create/maintain <a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended</a> v' + VERSION + '!<br> To see all my channel emotes and bot commands, go <a href=\"http://beamalerts.com/bex/exuviax\" target=\"_blank\"> here</a>')
                     )
                 );
+                $(".nano").nanoScroller({
+                    scroll: 'bottom'
+                });
             } else {
 
                 var $message = $('<div>')
@@ -281,17 +304,19 @@ BeamExtended = function() {
                     $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 }
 
-                $messages.prepend(
+                $messages.append(
                     $('<div>')
                     .addClass('message')
                     .attr('data-role', 'ExuMessage').append(
                         $message
                     )
                 );
-
+                $(".nano").nanoScroller({
+                    scroll: 'bottom'
+                });
             }
         } else {
-            $messages.prepend(
+            $messages.append(
                 $('<div>')
                 .addClass('message')
                 .attr('data-role', 'ExuMessage').append(
@@ -300,6 +325,9 @@ BeamExtended = function() {
                     .html('<a href="https://github.com/ExuDev/BeamExtended" target="_blank">Beam Extended loaded</a> v' + VERSION + '<br> Request custom emotes for your channel <a href=\"http://beamalerts.com/bex/\" target=\"_blank\"> here</a>')
                 )
             );
+            $(".nano").nanoScroller({
+                scroll: 'bottom'
+            });
         }
     }
 
@@ -335,13 +363,13 @@ BeamExtended = function() {
 
                     $imgContainer.append($('<img>').attr('src', this.href));
 
+
                     $imgContainer.append($('<a>').addClass('open btn').text('Open').attr({
                         target: '_blank',
                         href: this.href
                     })).append($('<div>').addClass('remove btn').text('Remove(Double-Click)').click(function() {
                         $imgContainer.replaceWith($('<div>').append(original));
                     }));
-
                 }
             });
         }
@@ -356,7 +384,7 @@ BeamExtended = function() {
                 if (!twitchEmotes.hasOwnProperty(i)) continue;
                 emote = twitchEmotes[i];
                 if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                    temp = $('<div class="tooltip-content">' + emote.emote).append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
+                    temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', twitchEmoteTemplate.split('{image_id}').join(emote.image_id)).data('emote', $('<span>').html(emote.emote).text()));
                     messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                     messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
                 }
@@ -368,7 +396,7 @@ BeamExtended = function() {
             if (!customEmotes.hasOwnProperty(i)) continue;
             emote = customEmotes[i];
             if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.global.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.global.split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                 messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
             }
@@ -379,7 +407,7 @@ BeamExtended = function() {
             if (!customChannelEmotes.hasOwnProperty(i)) continue;
             emote = customChannelEmotes[i];
             if (messageBody.indexOf(' ' + emote.emote + ' ') > -1 || messageBody.indexOf(':' + emote.emote + ':') > -1) {
-                temp = $('<div>').append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
+                temp = $('<div>').append($('<img bex-tooltip="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
                 messageBody = messageBody.split(' ' + emote.emote + ' ').join(' ' + temp.html() + ' ');
                 messageBody = messageBody.split(':' + emote.emote + ':').join(temp.html());
             }
@@ -414,18 +442,13 @@ BeamExtended = function() {
 
     $('textarea[ng-model="message.content"]').on("keyup", function(e) {
         var code = e.keyCode || e.which;
-        if (code == '9') // 9 = TAB
+        if (code == '32') // 9 = TAB
         {
             var string = $(this).val();
             var msgSplit = string.split(" ");
             for (var x = 0; x < msgSplit.length; x++) { // Loop through words, to support commands mid-sentence.
                 if (msgSplit[x].charAt(0) == COMMAND) { // Check first letter is command
                     switch (msgSplit[x].substring(1)) { // Remove the command executor
-                        case "me":
-                            if (x !== 0) break; // The command "ME" only works if it's first. Due to it's arguments.
-                            if (msgSplit.length <= 1) break; // No parameters are here, so... don't do it!
-                            $(this).val("*" + argsToString(msgSplit) + "*"); // Completely override textarea with new structure.
-                            break;
                         case "version":
                             $(this).val($(this).val().replace(COMMAND + "version", "BEx :: Beam Extended Version " + VERSION + "!")); // Just replace the command.
                             break;
@@ -467,25 +490,12 @@ BeamExtended = function() {
 
         var section = $(this).parent().parent().parent();
 
-        for (var i in emotes) {
-            if (!emotes.hasOwnProperty(i)) continue;
-            var emote = emotes[i];
-            $message.append($('<img title="' + emote.emote + '">').addClass('exu-emote').attr('src', customEmoteTemplate.channel.split('{image_pack}').join(emote.image_pack || channel).split('{image_id}').join(emote.image_id).split('{image_ext}').join(emote.image_ext || 'png')).data('emote', $('<span>').html(emote.emote).text()));
-        }
-
-
         // If our page doesn't exist, then re-add it.
         // We do this because the Beam system resets the syntax when their pages change.
         if ($(".chat-dialog-menu-page.bexobj").length === 0) {
             var ourPage = '<div class="chat-dialog-menu-page ng-scope bexobj" data-bpage="Bex">' +
                 '<table class="table">' +
                 '<tbody>' +
-                if (emotes !== null) {
-                    '<tr>' +
-                    '<td><label>Channel Emotes</label></td>' +
-                    '<td><label>'$message'</label></td>' +
-                    '</tr>' +
-                }
                 '<tr>' +
                 '<td class="col-xs-6"><label>Twitch Emotes</label></td>' +
                 '<td><label class="checkbox-fancy"><input type="checkbox" data-bex="twitchemotes" class="ng-pristine ng-untouched ng-valid"></label></td>' +
@@ -534,6 +544,12 @@ BeamExtended = function() {
         var messageAuthor = $this.find('.message-author').text().toLowerCase();
         var messageRole = $this.attr('data-role');
 
+        $('[bex-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+            content: {
+                attr: 'bex-tooltip' // Tell qTip2 to look inside this attr for its content
+            }
+        })
+
         if (messageAuthor === null || messageRole === null) {
             return;
         }
@@ -574,6 +590,9 @@ BeamExtended = function() {
             $this.on('DOMSubtreeModified', onMessageOverridden);
         }
     }
+
+
+
 
     function onMessageOverridden(event) {
         var $this = $(event.target);
