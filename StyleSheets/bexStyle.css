@@ -45,6 +45,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="BExPlayerDotMe"] .message-author {
     color: #f08;
     background: url('https://exudev.ca/BeX/icons/player-logo.png') no-repeat;
@@ -52,6 +53,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="BExFamilyStrong"] .message-author {
     color: #f08;
     background: url('https://exudev.ca/BeX/icons/fs-logo.png') no-repeat;
@@ -59,6 +61,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .chat-dialog {
     position: absolute;
     left: 10px;
@@ -79,6 +82,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="BExVerified"] .message-author {
     color: #9800FF;
     background: url('https://exudev.ca/BeX/icons/verified.png') no-repeat;
@@ -86,6 +90,7 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="ExuMessage"] {
     border-right: 3px solid #0003FF;
     border-left: 3px solid #0003FF;
@@ -108,12 +113,14 @@
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="BExTSSN"] .message-author {
     background: url('https://exudev.ca/BeX/tssn.png') no-repeat;
     padding-left: 22px;
     padding-bottom: 1px;
     background-position: -1px;
 }
+
 .chat-panel .message[data-role~="TheBExBot"] .message-body {
     color: #FF0000 !important;
 }
@@ -145,9 +152,10 @@
     font-weight: 700;
     background-color: rgba(121, 0, 0, 0.35)
 }
+
 .chat-panel .message[data-role~="BExDev"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -158,14 +166,14 @@
     z-index: 98;
     width: 128px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
 
 .chat-panel .message[data-role~="BExPlayerDotMe"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -176,14 +184,14 @@
     z-index: 98;
     width: 130px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
 
 .chat-panel .message[data-role~="BExFamilyStrong"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -194,13 +202,14 @@
     z-index: 98;
     width: 184px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
+
 .chat-panel .message[data-role~="BExMusicVerified"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -211,13 +220,14 @@
     z-index: 98;
     width: 191px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
+
 .chat-panel .message[data-role~="BExVerified"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -228,13 +238,14 @@
     z-index: 98;
     width: 80px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
+
 .chat-panel .message[data-role~="BExBot"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -245,13 +256,14 @@
     z-index: 98;
     width: 68px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
 }
+
 .chat-panel .message[data-role~="BExTSSN"] .message-author:hover:after {
     background: #333;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     border-radius: 5px;
     bottom: 26px;
     color: #fff;
@@ -262,7 +274,24 @@
     z-index: 98;
     width: 126px;
     -webkit-animation: ToolTip 0.2s;
-    -moz-animation:    ToolTip 0.2s;
-    -o-animation:      TollTip 0.2s;
-    animation:         ToolTip 0.2s;
+    -moz-animation: ToolTip 0.2s;
+    -o-animation: TollTip 0.2s;
+    animation: ToolTip 0.2s;
+}
+
+.qtip {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 3px #333;
+    -moz-box-shadow: 0 0 3px #333;
+    box-shadow: 0 0 3px #333;
+    color: white;
+    border: 0 solid transparent;
+    background: #4A4A4A;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4A4A4A), color-stop(100%, black));
+    background-image: -webkit-linear-gradient(top, #4A4A4A 0, black 100%);
+    background-image: -moz-linear-gradient(top, #4A4A4A 0, black 100%);
+    background-image: -ms-linear-gradient(top, #4A4A4A 0, black 100%);
+    background-image: -o-linear-gradient(top, #4A4A4A 0, black 100%);
 }
