@@ -417,6 +417,7 @@ BeamExtended = function() {
 
                 if (hasEmotes) {
                     $messageBody.find('[bex-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+                        style: { classes: 'qtip' },
                         content: {
                             attr: 'bex-tooltip' // Tell qTip2 to look inside this attr for its content
                         }
