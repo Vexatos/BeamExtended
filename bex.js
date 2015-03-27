@@ -75,7 +75,7 @@ BeamExtended = function() {
 
     var triggeredAlerts = [];
 
-    var tssnCrew = ['mindlesspuppetz', 'siggy', 'blackhawk120', 'ziteseve', 'squeaker', 'akujitube', 'artdude543', 'lilmac21', 'icanhascookie69', 'cadillac_don'];
+    var tssnCrew = ['mindlesspuppetz', 'siggy', 'blackhawk120', 'ziteseve', 'squeaker', 'grimrot', 'artdude543', 'lilmac21', 'icanhascookie69', 'cadillac_don'];
 
     var timeoutAlertChecker;
     var timeoutColorGetter;
