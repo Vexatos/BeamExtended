@@ -112,14 +112,14 @@ BeamExtended = function() {
 
     //region Loading data
     //region Roles
-    $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/config.json', function(data) {
+    $.getJSON('https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/config.json', function(data) {
         roles = data;
     });
     //endregion
 
     //region Chat Colors
     function getColors() {
-        $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/colors.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/UsernameColors.json', function(data) {
             colors = data;
         });
         timeoutColorGetter = setTimeout(function() {
@@ -130,7 +130,7 @@ BeamExtended = function() {
     //endregion
 
     //region Emotes
-    $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/emotes.json',
+    $.getJSON('https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/emotes/_index.json',
         /**
          * @param {{template: String, emotes: Object}} data
          */
@@ -238,7 +238,7 @@ BeamExtended = function() {
         }
     }
 
-    $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/ChannelEmotes/' + channel + '.json')
+    $.getJSON('https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/emotes/' + channel + '/_index.json')
         .done(function(emotes) {
             onCustomChannelEmotesLoaded(emotes);
         })
@@ -247,7 +247,7 @@ BeamExtended = function() {
         });
     //endregion
     //endregion
-    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/' + styleChannel + '.css">');
+    var $cssLink = $('<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/StyleSheets/' + styleChannel + '.css">');
     $('head').append($cssLink);
 
     function overrideMessageBody($messageBody) {
@@ -378,7 +378,7 @@ BeamExtended = function() {
     console.log('Loaded BeamExtended v' + VERSION);
 
     function checkForAlerts() {
-        $.getJSON('https://ec87d41a87dde68618f3f11fc9c3e4fde11820dc.googledrive.com/host/0B0aYi6iDIlBaSGxJNkFTeEhqMmM/alert.json', function(systemAlert) {
+        $.getJSON('https://raw.githubusercontent.com/IFDevelopment/BeamExtended/master/alert.json', function(systemAlert) {
             for (var i in systemAlert) {
                 if (!systemAlert.hasOwnProperty(i)) continue;
                 if (triggeredAlerts.indexOf(systemAlert[i]) > -1) continue;
